@@ -41,4 +41,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function likes(){
+        return $this->belongsToMany(Shop::class);
+    }
+
+    public function reservations(){
+        return $this->belongsToMany(Reservation::class)->withPivot('reservation');
+    }
 }
+

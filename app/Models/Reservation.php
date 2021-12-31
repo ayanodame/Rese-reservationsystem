@@ -16,4 +16,5 @@ class Reservation extends Model
         'use_date',
         'use_time',
     ];
+    
 }
