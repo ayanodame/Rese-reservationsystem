@@ -18,4 +18,10 @@ class Shop extends Model
         'close_time',
         'image_url',
     ];
+    public function area(){
+        return $this->belongsTo('App\Models\Area');
+    }
+    public function genre(){
+        return $this->belongsTo('app\Models\Genre');
+    }
 }
