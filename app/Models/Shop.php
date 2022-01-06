@@ -22,6 +22,6 @@ class Shop extends Model
         return $this->belongsTo('App\Models\Area');
     }
     public function genre(){
-        return $this->belongsTo('app\Models\Genre');
+        return $this->belongsTo('App\Models\Genre');
     }
 }
