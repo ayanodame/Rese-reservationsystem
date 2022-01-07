@@ -1,25 +1,24 @@
 <!-- 飲食店詳細ページ用 -->
 <form action="/search" method="post">
 @csrf
-<select name="area">
-<option value="">All area</option>
-@foreach($areas as $area)
-<option value="{{$area->name}}">{{$area->name}}</option>
-@endforeach
+<select class="input_area" name="input_area" value="">
+  <option name="input_area" value="">All area</option>
+  @foreach($areas as $area)
+  <option name="input_area" value="{{$area->id}}">{{$area->name}}</option>
+  @endforeach
 </select>
-<select name="genre">
-<option value="">All genre</option>
-@foreach($genres as $genre)
-<option value="{{$genre->name}}">{{$genre->name}}</option>
-@endforeach
-</select>
-<input type="text" name="">
+<input type="text" class="input_name" name="input_name" value="{{$name}}" placeholder="Search...">
 </form>
+
+
+
+
 <p>飲食店詳細ページ</p>
-@foreach($items as $item)
-<p>{{$item->name}}</p>
-<p>{{$item->area->name}}</p>
-<p>{{$item->genre->name}}</p>
-<img src="{{$item->image_url}}" alt="{{$item->name}}">
+@if(@isset($results))
+@foreach($results as $result)
+<p>{{$result->name}}</p>
+<p>{{$result->area->name}}</p>
+<p>{{$result->genre->name}}</p>
 <p>詳しく見る</p>
 @endforeach
+@endif
