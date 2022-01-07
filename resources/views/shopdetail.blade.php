@@ -1,5 +1,5 @@
 <!--検索用 -->
-<form action="/search" method="post">
+<form action="/" method="get">
 @csrf
 <select class="input_area" name="input_area" value="">
   <option name="input_area" value="">All area</option>
@@ -23,14 +23,6 @@
 <p>{{$result->name}}</p>
 <p>{{$result->area->name}}</p>
 <p>{{$result->genre->name}}</p>
-<p>詳しく見る</p>
-@endforeach
-@else
-@foreach($items as $item)
-<p>{{$item->name}}</p>
-<p>{{$item->area->name}}</p>
-<p>{{$item->genre->name}}</p>
-<img src="{{$item->image_url}}" alt="{{$item->name}}">
 <p>詳しく見る</p>
 @endforeach
 @endif
