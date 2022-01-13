@@ -13,7 +13,7 @@
   <option name="input_genre" value="{{$genre->id}}">{{$genre->name}}</option>
   @endforeach
 </select>
-<input type="text" class="input_name" name="input_name" value="" placeholder="Search...">
+<input type="text" class="input_keyword" name="input_keyword" value="" placeholder="Search...">
 </form>
 
 @foreach($shops as $shop)
