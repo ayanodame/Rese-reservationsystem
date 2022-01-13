@@ -10,7 +10,7 @@ use App\Models\Genre;
 class ShopController extends Controller
 {
     public function index(Request $request){
-        $keywords=$request->input_name;
+        $keywords=$request->input_keyword;
         $area=$request->input_area;
         $genre=$request->input_genre;
         $shops=Shop::searchShop($area,$genre,$keywords);
