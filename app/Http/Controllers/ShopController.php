@@ -9,19 +9,14 @@ use App\Models\Genre;
 
 class ShopController extends Controller
 {
+    //指定されている時だけ、こうする。
+    //MODEL側にメソッドを組む。(Laravel model select whereで検索すると良い条件がある場)
+    //MODELで撮ってくる順番を指定する（Orderbyで）Area→Genre→Name順
+    //nameも条件入れる。
     public function index(Request $request){
-        $results=Shop::where('name','LIKE',"%{$request->input_name}%")->where('area_id','LIKE',"%{$request->input_area}")->where('genre_id','LIKE',"%{$request->input_genre}")->get();
-        $param=[
-            'name'=>$request->input_name,
-            'area_id'=>$request->input_area,
-            'genre_id'=>$request->input_genre,
-            'results'=>$results,
-        ];
+        $shops=Shop::searchShop($area,$genre,$keywords);
         $areas=Area::all();
         $genres=Genre::all();
-        $keywords=[
-            'name'=>'',
-        ];
-        return view('shopdetail',['areas'=>$areas,'genres'=>$genres],$param,$keywords);
+        return view('shoplist',['shops'=>$shops,'areas'=>$areas,'genres'=>$genres],$param);
     }
 }
