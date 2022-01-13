@@ -25,7 +25,7 @@ class Shop extends Model
         return $this->belongsTo('App\Models\Genre');
     }
     public static function searchShop($area,$genre,$keywords){
-        $query=Shop::where('name',$keywords)->where('area_id',$area)->where('genre_id',$genre)->get();
+        $query=Shop::where('name','LIKE',"%{$keywords}%")->where('area_id',$area)->where('genre_id',$genre)->get();
         return $query;
     }
 }
