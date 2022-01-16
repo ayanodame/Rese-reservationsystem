@@ -25,7 +25,33 @@ class Shop extends Model
         return $this->belongsTo('App\Models\Genre');
     }
     public static function searchShop($area,$genre,$keywords){
-        $query=Shop::where('name','LIKE',"%{$keywords}%")->where('area_id','LIKE',"%{$area}%")->where('genre_id','LIKE',"%{$genre}%")->get();
-        return $query;
+        //全部入力されている場合
+        if($area and $genre and $keywords!==null){
+            $query=Shop::where('name','LIKE',"%{$keywords}%")->where('area_id',$area)->where('genre_id',$genre)->get();
+            return $query;
+        }
+        //地域とジャンルが選択されている場合
+        if($area and $genre!==null){
+            $query=Shop::where('area_id',$area)->where('genre_id',$genre)->get();
+            return $query;
+        }
+        //キーワードのみ入力されている場合
+        if($keywords!==null){
+            $query=Shop::where('name','LIKE',"%{$keywords}%")->get();
+            return $query;
+        }
+        //地域のみ選択されている場合
+        if($area!==null){
+            $query=Shop::where('area_id',$area)->get();
+            return $query;
+        }
+        //ジャンルのみ選択されている場合
+        if($genre!==null){
+            $query=Shop::where('genre_id',$genre)->get();
+            return $query;
+        }
+        //何も選択されていない場合
+        $query=Shop::all();
+            return $query;
     }
 }
