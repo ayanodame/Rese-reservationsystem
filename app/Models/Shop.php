@@ -42,16 +42,16 @@ class Shop extends Model
         }
         //地域のみ選択されている場合
         if($area!==null){
-            $query=Shop::where('area_id',$area)->get();
+            $query=Shop::where('area_id',$area)->orderBy('genre_id')->get();
             return $query;
         }
         //ジャンルのみ選択されている場合
         if($genre!==null){
-            $query=Shop::where('genre_id',$genre)->get();
+            $query=Shop::where('genre_id',$genre)->orderBy('area_id')->get();
             return $query;
         }
         //何も選択されていない場合
-        $query=Shop::all();
+        $query=Shop::orderBy('area_id')->orderBy('genre_id')->orderBy('name')->get();
             return $query;
     }
 }
