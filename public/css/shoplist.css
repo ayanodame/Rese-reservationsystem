@@ -1,3 +1,82 @@
-p {
-    color: red;
+body {
+    background-color: lightgray;
+}
+
+.systemHeader {
+    display: flex;
+    height: 100px;
+    position: relative;
+}
+
+.menu {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    left: 20px;
+    top: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 2px 3px gray;
+    background-color: blue;
+}
+
+.menu__line--top,
+.menu__line--middle,
+.menu__line--bottom {
+    display: inline-block;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    transition: 0.5s;
+    left: 10px;
+}
+
+.menu__line--top {
+    top: 15px;
+    width: 30%;
+}
+
+.menu__line--middle {
+    top: 25px;
+    width: 60%;
+}
+
+.menu__line--bottom {
+    bottom: 15px;
+    width: 20%;
+}
+
+.systemName {
+    color: blue;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    left: 95px;
+}
+
+.searchForm {
+    position: absolute;
+    background-color: white;
+    top: 30px;
+    height: 50px;
+    right: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px gray;
+}
+/* 擬似要素が必要 */
+.form_area,
+.form_genre,
+.form_keyword {
+    width: 100px;
+    height: 38px;
+    margin: 5px;
+    font-weight: 550;
+    border: none;
+    padding-left: 10px;
+}
+
+.form_keyword {
+    width: 300px;
 }
