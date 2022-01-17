@@ -41,17 +41,19 @@
 <main class="systemShoplist">
 <section class="shopList">
   @foreach($shops as $shop)
-  <div class="card">
+  <div class="shopCard">
     <div class="card_image">
       <img src="{{$shop->image_url}}" alt="{{$shop->name}}" class="shop_image">
     </div>
     <div class="card_text">
-      <p class="name">{{$shop->name}}</p>
-      <p class="area"><span class="hushtag">#</span>{{$shop->area->name}}</p>
-      <p class="genre"><span class="hushtag">#</span>{{$shop->genre->name}}</p>
+      <p class="text_name">{{$shop->name}}</p>
+      <div class="text_hushtagList">
+        <p class="area"><span class="hushtag">#</span>{{$shop->area->name}}</p>
+        <p class="genre"><span class="hushtag">#</span>{{$shop->genre->name}}</p>
+      </div>
     </div>
-    <div class="shop_detail">
-      <a href="店舗詳細ページへ">詳しくみる</a>
+    <div class="card_button">
+      <a href="店舗詳細ページへ" class="shopDetail">詳しくみる</a>
     </div>
   </div>
   @endforeach
