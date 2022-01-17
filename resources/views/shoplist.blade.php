@@ -9,12 +9,16 @@
 @section('body')
 
 <header class="systemHeader">
-  <div class="menu">
-    <span class="menu__line--top"></span>
-    <span class="menu__line--middle"></span>
-    <span class="menu__line--bottom"></span>
+  <div class="header_top">
+    <div class="menu">
+      <span class="menu__line--top"></span>
+      <span class="menu__line--middle"></span>
+      <span class="menu__line--bottom"></span>
+    </div>
+    <div class="menu_title">
+      <p class="systemName">Rese</p>
+    </div>
   </div>
-    <p class="systemName">Rese</p>
   <div class="searchForm">
     <form action="/" method="get">
       @csrf
@@ -38,10 +42,14 @@
 <section class="shopList">
   @foreach($shops as $shop)
   <div class="card">
-    <img src="{{$shop->image_url}}" alt="{{$shop->name}}" class="shop_image">
-    <p class="shop_name">{{$shop->name}}</p>
-    <p class="shop_area"><span class="hushtag">#</span>{{$shop->area->name}}</p>
-    <p class="shop_genre"><span class="hushtag">#</span>{{$shop->genre->name}}</p>
+    <div class="card_image">
+      <img src="{{$shop->image_url}}" alt="{{$shop->name}}" class="shop_image">
+    </div>
+    <div class="card_text">
+      <p class="name">{{$shop->name}}</p>
+      <p class="area"><span class="hushtag">#</span>{{$shop->area->name}}</p>
+      <p class="genre"><span class="hushtag">#</span>{{$shop->genre->name}}</p>
+    </div>
     <div class="shop_detail">
       <a href="店舗詳細ページへ">詳しくみる</a>
     </div>
