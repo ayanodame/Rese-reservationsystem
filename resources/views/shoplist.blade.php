@@ -34,7 +34,7 @@
     </form>
   </div>
 </header>
-<main class="shoplist_main">
+<main class="systemShoplist">
 <section class="shopList">
   @foreach($shops as $shop)
   <div class="card">
