@@ -34,7 +34,9 @@
         <option name="input_genre" value="{{$genre->id}}">{{$genre->name}}</option>
         @endforeach
       </select>
-      <input type="text" class="form_keyword" name="input_keyword" value="" placeholder="Search...">
+      <div class="searchForm_keyword">
+        <input type="text" class="form_keyword" name="input_keyword" value="" placeholder="Search...">
+      </div>
     </form>
   </div>
 </header>
