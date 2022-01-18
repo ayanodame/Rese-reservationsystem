@@ -25,33 +25,19 @@ class Shop extends Model
         return $this->belongsTo('App\Models\Genre');
     }
     public static function searchShop($area,$genre,$keywords){
-        //全部入力されている場合
-        if($area and $genre and $keywords!==null){
-            $query=Shop::where('name','LIKE',"%{$keywords}%")->where('area_id',$area)->where('genre_id',$genre)->get();
-            return $query;
-        }
-        //地域とジャンルが選択されている場合
-        if($area and $genre!==null){
-            $query=Shop::where('area_id',$area)->where('genre_id',$genre)->get();
-            return $query;
-        }
-        //キーワードのみ入力されている場合
-        if($keywords!==null){
-            $query=Shop::where('name','LIKE',"%{$keywords}%")->get();
-            return $query;
-        }
-        //地域のみ選択されている場合
-        if($area!==null){
-            $query=Shop::where('area_id',$area)->orderBy('genre_id')->get();
-            return $query;
-        }
-        //ジャンルのみ選択されている場合
-        if($genre!==null){
-            $query=Shop::where('genre_id',$genre)->orderBy('area_id')->get();
-            return $query;
-        }
-        //何も選択されていない場合
+        //一覧表示の順番
         $query=Shop::orderBy('area_id')->orderBy('genre_id')->orderBy('name')->get();
-            return $query;
+        //地域が選択されている場合
+        if($area!==null){
+            $query=$query->where('area_id',$area);
+        //ジャンルが選択されている場合
+        }if($genre!==null){
+            $query=$query->where('genre_id',$genre);
+        //キーワードが入っている場合
+        }if($keywords!==null){
+            $query=$query->where('name','LIKE',"%{$keywords}%");
+        }
+        return $query;
+
     }
 }
