@@ -5,7 +5,7 @@ body {
 .systemHeader {
     display: flex;
     justify-content: space-between;
-    height: 130px;
+    height: 80px;
     padding: 30px 50px;
 }
 
@@ -62,6 +62,7 @@ body {
 }
 
 .searchForm {
+    display: flex;
     background-color: white;
     height: 50px;
     padding-top: 5px;
@@ -84,10 +85,28 @@ body {
     border-left: 2px solid lightgray;
 }
 
-/* 虫眼鏡（擬似要素）が必要 */
 .form_keyword {
     width: 300px;
     border-left: 2px solid lightgray;
+    padding: 3px 0 3px 3em;
+}
+
+.searchForm_keyword {
+    display: inline-block;
+    position: relative;
+}
+
+/* 虫眼鏡アイコン */
+.searchForm_keyword::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: url(../icon/虫眼鏡アイコン色変え.svg) no-repeat center center /
+        auto 100%;
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: 20px;
 }
 
 .shopList {
@@ -142,7 +161,6 @@ body {
     color: rgb(58, 57, 57);
 }
 
-/*ハッシュタグ、擬似要素にしたらどうだろう？ */
 .hushtag {
     font-size: 13px;
 }
