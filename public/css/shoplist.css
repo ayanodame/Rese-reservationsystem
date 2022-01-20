@@ -2,14 +2,14 @@ body {
     background-color: lightgray;
 }
 
-.systemHeader {
+.system-header {
     display: flex;
     justify-content: space-between;
     height: 80px;
     padding: 30px 50px;
 }
 
-.header_top {
+.header-top {
     display: flex;
     position: relative;
 }
@@ -51,17 +51,17 @@ body {
     width: 20%;
 }
 
-.menu_title {
+.menu-title {
     height: 50px;
     padding: 10px 30px;
 }
-.systemName {
+.menu-title__name {
     color: blue;
     font-size: 30px;
     font-weight: bold;
 }
 
-.searchForm {
+.search-form {
     display: flex;
     background-color: white;
     height: 50px;
@@ -70,9 +70,9 @@ body {
     box-shadow: 3px 3px 4px gray;
 }
 
-.form_area,
-.form_genre,
-.form_keyword {
+.form__area,
+.form__genre,
+.form__keyword {
     width: 100px;
     height: 35px;
     margin: 5px;
@@ -81,23 +81,23 @@ body {
     padding-left: 10px;
 }
 
-.form_genre {
+.form__genre {
     border-left: 2px solid lightgray;
 }
 
-.form_keyword {
+.form__keyword {
     width: 300px;
     border-left: 2px solid lightgray;
     padding: 3px 0 3px 3em;
 }
 
-.searchForm_keyword {
+.search-form__keyword {
     display: inline-block;
     position: relative;
 }
 
 /* 虫眼鏡アイコン */
-.searchForm_keyword::before {
+.search-form__keyword::before {
     content: "";
     width: 18px;
     height: 18px;
@@ -109,7 +109,7 @@ body {
     left: 20px;
 }
 
-.shopList {
+.shoplist {
     display: flex;
     justify-content: flex-start;
     padding-left: 50px;
@@ -118,7 +118,7 @@ body {
     flex-wrap: wrap;
 }
 
-.shopCard {
+.shop-card {
     width: 300px;
     height: 320px;
     margin-left: 5px;
@@ -129,33 +129,33 @@ body {
     box-shadow: 3px 3px 4px gray;
 }
 
-.card_image {
+.card__image {
     height: 50%;
 }
 
-.shop_image {
+.card__image__shop {
     width: 100%;
     height: 100%;
     border-radius: 5px 5px 0px 0px;
 }
 
-.card_text {
+.card__text {
     padding-top: 30px;
     padding-left: 20px;
 }
 
-.text_name {
+.card__text__name {
     font-weight: 550;
     font-size: 20px;
     padding-bottom: 15px;
 }
 
-.text_hushtagList {
+.text__hushtag-list {
     display: flex;
 }
 
-.area,
-.genre {
+.text__hushtag-list__area,
+.text__hushtag-list__genre {
     padding-right: 10px;
     font-size: 15px;
     color: rgb(58, 57, 57);
@@ -165,12 +165,12 @@ body {
     font-size: 13px;
 }
 
-.card_button {
+.card__button {
     padding-top: 30px;
     padding-left: 20px;
 }
 
-.shopDetail {
+.card__button_shop-detail {
     background-color: blue;
     border-radius: 5px;
     text-decoration: none;
