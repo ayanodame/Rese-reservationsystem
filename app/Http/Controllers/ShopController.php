@@ -10,14 +10,12 @@ use App\Models\Genre;
 class ShopController extends Controller
 {
     public function index(Request $request){
-        $param=[
-            $keywords=$request->input_keyword,
-            $area=$request->input_area,
-            $genre=$request->input_genre,
-        ];
-        $shops=Shop::searchShop($area,$genre,$keywords);
+        $keywords=$request->input_keyword;
+        $areaId=$request->input_area;
+        $genreId=$request->input_genre;
+        $shops=Shop::searchShop($areaId,$genreId,$keywords);
         $areas=Area::all();
         $genres=Genre::all();
-        return view('shoplist',['shops'=>$shops,'areas'=>$areas,'genres'=>$genres],$param);
+        return view('shoplist',['shops'=>$shops,'areas'=>$areas,'genres'=>$genres,'keywords'=>$keywords,'areaId'=>$areaId,'genreId'=>$genreId]);
     }
 }

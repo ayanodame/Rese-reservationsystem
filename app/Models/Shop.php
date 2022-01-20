@@ -24,16 +24,16 @@ class Shop extends Model
     public function genre(){
         return $this->belongsTo('App\Models\Genre');
     }
-    public static function searchShop($area,$genre,$keywords){
+    public static function searchShop($areaId,$genreId,$keywords){
 
         $query=Shop::query();
         //地域が選択されている場合
-        if(isset($area)) {
-            $query=$query->where('area_id',$area);
+        if(isset($areaId)) {
+            $query=$query->where('area_id',$areaId);
         }
         //ジャンルが選択されている場合
-        if(isset($genre)) {
-            $query=$query->where('genre_id',$genre);
+        if(isset($genreId)) {
+            $query=$query->where('genre_id',$genreId);
         }
         //キーワードが入力されている場合
         if(isset($keywords)) {
