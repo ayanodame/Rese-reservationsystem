@@ -22,43 +22,43 @@
   <div class="searchForm">
     <form action="/" method="get">
       @csrf
-      <select class="form_area" name="input_area" value="">
+      <select class="form_area" name="input_area" value="{{$areaId}}">
         <option name="input_area" value="">All area</option>
         @foreach($areas as $area)
-        <option name="input_area" value="{{$area->id}}">{{$area->name}}</option>
+        <option name="input_area" value="{{$area->id}}" <?php ($area->id)==$areaId ? print "selected" : print ""; ?>>{{$area->name}}</option>
         @endforeach
       </select>
-      <select class="form_genre" name="input_genre" value="">
+      <select class="form_genre" name="input_genre" value="{{$genreId}}">
         <option name="input_genre" value="">All genre</option>
         @foreach($genres as $genre)
-        <option name="input_genre" value="{{$genre->id}}">{{$genre->name}}</option>
+        <option name="input_genre" value="{{$genre->id}}" <?php ($genre->id)==$genreId ? print "selected" : print ""; ?>>{{$genre->name}}</option>
         @endforeach
       </select>
       <div class="searchForm_keyword">
-        <input type="text" class="form_keyword" name="input_keyword" value="" placeholder="Search...">
+        <input type="text" class="form_keyword" name="input_keyword" value="{{$keywords}}" placeholder="Search...">
       </div>
     </form>
   </div>
 </header>
 <main class="systemShoplist">
-<section class="shopList">
-  @foreach($shops as $shop)
-  <div class="shopCard">
-    <div class="card_image">
-      <img src="{{$shop->image_url}}" alt="{{$shop->name}}" class="shop_image">
-    </div>
-    <div class="card_text">
-      <p class="text_name">{{$shop->name}}</p>
-      <div class="text_hushtagList">
-        <p class="area"><span class="hushtag">#</span>{{$shop->area->name}}</p>
-        <p class="genre"><span class="hushtag">#</span>{{$shop->genre->name}}</p>
+  <section class="shopList">
+    @foreach($shops as $shop)
+    <div class="shopCard">
+      <div class="card_image">
+        <img src="{{$shop->image_url}}" alt="{{$shop->name}}" class="shop_image">
+      </div>
+      <div class="card_text">
+        <p class="text_name">{{$shop->name}}</p>
+        <div class="text_hushtagList">
+          <p class="area"><span class="hushtag">#</span>{{$shop->area->name}}</p>
+          <p class="genre"><span class="hushtag">#</span>{{$shop->genre->name}}</p>
+        </div>
+      </div>
+      <div class="card_button">
+        <a href="店舗詳細ページへ" class="shopDetail">詳しくみる</a>
       </div>
     </div>
-    <div class="card_button">
-      <a href="店舗詳細ページへ" class="shopDetail">詳しくみる</a>
-    </div>
-  </div>
-  @endforeach
-</section>
+    @endforeach
+  </section>
 </main>
 @endsection
