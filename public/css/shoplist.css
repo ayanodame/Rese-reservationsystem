@@ -65,9 +65,46 @@ body {
     display: flex;
     background-color: white;
     height: 50px;
-    padding-top: 5px;
     border-radius: 5px;
+    padding-top: 5px;
     box-shadow: 3px 3px 4px gray;
+}
+
+.select-wrap-area,
+.select-wrap-genre {
+    position: relative;
+    display: inline-block;
+}
+
+.form__area,
+.form__genre {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.select-wrap-area::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: url(../icon/矢印アイコン\　下4色変え.svg) no-repeat center
+        center / auto 100%;
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 5px;
+}
+
+.select-wrap-genre::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: url(../icon/矢印アイコン\　下4色変え.svg) no-repeat center
+        center / auto 100%;
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 5px;
 }
 
 .form__area,
@@ -87,8 +124,8 @@ body {
 
 .form__keyword {
     width: 300px;
+    padding: 0px 0 0px 3em;
     border-left: 2px solid lightgray;
-    padding: 3px 0 3px 3em;
 }
 
 .search-form__keyword {

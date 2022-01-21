@@ -22,18 +22,22 @@
   <div class="search-form">
     <form action="/" method="get">
       @csrf
-      <select class="form__area" name="input_area" value="{{$areaId}}" onchange="submit(this.form)">
-        <option name="input_area" value="">All area</option>
-        @foreach($areas as $area)
-        <option name="input_area" value="{{$area->id}}" <?php ($area->id)==$areaId ? print "selected" : print ""; ?>>{{$area->name}}</option>
-        @endforeach
-      </select>
-      <select class="form__genre" name="input_genre" value="{{$genreId}}" onchange="submit(this.form)">
-        <option name="input_genre" value="">All genre</option>
-        @foreach($genres as $genre)
-        <option name="input_genre" value="{{$genre->id}}" <?php ($genre->id)==$genreId ? print "selected" : print ""; ?>>{{$genre->name}}</option>
-        @endforeach
-      </select>
+      <div class="select-wrap-area">
+        <select class="form__area" name="input_area" value="{{$areaId}}" onchange="submit(this.form)">
+          <option name="input_area" value="">All area</option>
+          @foreach($areas as $area)
+          <option name="input_area" value="{{$area->id}}" <?php ($area->id)==$areaId ? print "selected" : print ""; ?>>{{$area->name}}</option>
+          @endforeach
+        </select>
+      </div>
+      <div class="select-wrap-genre">
+        <select class="form__genre" name="input_genre" value="{{$genreId}}" onchange="submit(this.form)">
+          <option name="input_genre" value="">All genre</option>
+          @foreach($genres as $genre)
+          <option name="input_genre" value="{{$genre->id}}" <?php ($genre->id)==$genreId ? print "selected" : print ""; ?>>{{$genre->name}}</option>
+          @endforeach
+        </select>
+      </div>
       <div class="search-form__keyword">
         <input type="text" class="form__keyword" name="input_keyword" value="{{$keywords}}" placeholder="Search...">
       </div>
