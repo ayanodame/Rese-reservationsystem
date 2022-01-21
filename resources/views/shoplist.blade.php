@@ -10,13 +10,13 @@
 
 <header class="system-header">
   <div class="header-top">
-    <div class="menu">
+    <div class="menu" id="menu">
       <span class="menu__line--top"></span>
       <span class="menu__line--middle"></span>
       <span class="menu__line--bottom"></span>
     </div>
     <div class="menu-title">
-      <p class="menu-title__name">Rese</p>
+      <a href="/" class="menu-title__name">Rese</a>
     </div>
   </div>
   <div class="search-form">
@@ -65,4 +65,5 @@
     @endforeach
   </section>
 </main>
+<script src="{{ asset('js/main.js') }}"></script>
 @endsection

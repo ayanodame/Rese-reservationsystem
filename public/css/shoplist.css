@@ -51,6 +51,20 @@ body {
     width: 20%;
 }
 
+.menu.open span:nth-of-type(1) {
+    width: 30px;
+    top: 25px;
+    transform: rotate(45deg);
+}
+.menu.open span:nth-of-type(2) {
+    opacity: 0;
+}
+.menu.open span:nth-of-type(3) {
+    width: 30px;
+    top: 25px;
+    transform: rotate(-45deg);
+}
+
 .menu-title {
     height: 50px;
     padding: 10px 30px;
@@ -59,6 +73,7 @@ body {
     color: blue;
     font-size: 30px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .search-form {
