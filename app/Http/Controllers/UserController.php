@@ -13,7 +13,8 @@ class UserController extends Controller
     }
 
     public function register(RegisterRequest $request){
-        $data=$request->all();
-        return view('register')->with($data);
+        $form=$request->all();
+        User::create($form);
+        return view('thanks');
     }
 }
