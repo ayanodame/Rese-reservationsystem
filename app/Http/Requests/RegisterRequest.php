@@ -29,4 +29,15 @@ class RegisterRequest extends FormRequest
             'password'=>'required|min:8|max:50',
         ];
     }
+
+    public function messages() {
+        return [
+            "required"=>"必須項目です。",
+            "email"=>"メールアドレスの形式で入力してください。",
+            "email.unique"=>"登録済みのメールアドレスです。",
+            "name.max"=>"100文字以内で入力してください。",
+            "password.max"=>"50文字以内で入力してください。",
+            "password.min"=>"8文字以上で入力してください。",
+        ];
+    }
 }
