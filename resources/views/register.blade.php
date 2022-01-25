@@ -34,26 +34,25 @@
           @if($errors->has('name'))
           <p class="error-message">{{$errors->first('name')}}</p>
           @endif
+          <img class="form__image" src="icon/人物アイコン.svg" alt="人物アイコン">
           <input type="text" class="form__name" name="name" placeholder="Username" value="{{ old('name') }}">
         </div>
         <div class="box__content__form">
           @if($errors->has('email'))
           <p class="error-message">{{$errors->first('email')}}</p>
           @endif
-          <div class="form__email">
-            <input type="text" class="form__email" name="email" placeholder="Email" value="{{ old('email') }}">
-          </div>
+          <img class="form__image" src="icon/メールの無料アイコン.svg" alt="メールアイコン">
+          <input type="text" class="form__email" name="email" placeholder="Email" value="{{ old('email') }}">
         </div>
         <div class="box__content__form">
           @if($errors->has('password'))
           <p class="error-message">{{$errors->first('password')}}</p>
           @endif
-          <div class="form__password">
-            <input type="text" name="password" placeholder="Password" value="{{ old('password') }}">
-          </div>
+          <img class="form__image" src="icon/カギアイコン.svg" alt="カギアイコン">
+          <input type="text" class="form__password" name="password" placeholder="Password" value="{{ old('password') }}">
         </div>
         <div class="box__content__button">
-          <input type="submit" value="登録">
+          <input type="submit" class="form__button" value="登録">
         </div>
       </form>
     </div>
