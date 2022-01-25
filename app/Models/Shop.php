@@ -22,6 +22,25 @@ class Shop extends Model
         return $this->belongsTo('App\Models\Area');
     }
     public function genre(){
-        return $this->belongsTo('app\Models\Genre');
+        return $this->belongsTo('App\Models\Genre');
+    }
+    public static function searchShop($areaId,$genreId,$keywords){
+
+        $query=Shop::query();
+        //地域が選択されている場合
+        if(isset($areaId)) {
+            $query=$query->where('area_id',$areaId);
+        }
+        //ジャンルが選択されている場合
+        if(isset($genreId)) {
+            $query=$query->where('genre_id',$genreId);
+        }
+        //キーワードが入力されている場合
+        if(isset($keywords)) {
+            $query=$query->where('name','LIKE',"%{$keywords}%");
+        }
+        $items=$query->orderBy('area_id')->orderBy('genre_id')->get();
+        return $items;
+
     }
 }
