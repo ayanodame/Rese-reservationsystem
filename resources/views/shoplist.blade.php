@@ -5,21 +5,8 @@
   <link rel="stylesheet" href="{{ asset('css/shoplist.css') }}">
 @endsection
 
-
-@section('body')
-
-<header class="system-header">
-  <div class="header-top">
-    <div class="menu" id="menu">
-      <span class="menu__line--top"></span>
-      <span class="menu__line--middle"></span>
-      <span class="menu__line--bottom"></span>
-    </div>
-    <div class="menu-title">
-      <a href="/" class="menu-title__name">Rese</a>
-    </div>
-  </div>
-  <div class="search-form">
+@section('search')
+<div class="search-form">
     <form action="/" method="get">
       @csrf
       <div class="select-wrap-area">
@@ -43,7 +30,10 @@
       </div>
     </form>
   </div>
-</header>
+@endsection
+
+@section('main')
+
 <main class="system-shoplist">
   <section class="shoplist">
     @foreach($shops as $shop)
@@ -65,5 +55,4 @@
     @endforeach
   </section>
 </main>
-<script src="{{ asset('js/main.js') }}"></script>
 @endsection

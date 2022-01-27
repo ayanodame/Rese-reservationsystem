@@ -7,20 +7,7 @@
 @endsection
 
 
-@section('body')
-
-<header class="system-header">
-  <div class="header-top">
-    <div class="menu" id="menu">
-      <span class="menu__line--top"></span>
-      <span class="menu__line--middle"></span>
-      <span class="menu__line--bottom"></span>
-    </div>
-    <div class="menu-title">
-      <a href="/" class="menu-title__name">Rese</a>
-    </div>
-  </div>
-</header>
+@section('main')
 
 <main class="register">
   <div class="box">
@@ -70,5 +57,4 @@
     </div>
   </div>
 </main>
-<script src="{{ asset('js/main.js') }}"></script>
 @endsection
