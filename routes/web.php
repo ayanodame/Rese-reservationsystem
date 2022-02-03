@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,5 @@ use App\Http\Controllers\ShopController;
 */
 
 Route::get('/',[ShopController::class,'index']);
+Route::get('/register',[UserController::class,'registerView']);
+Route::post('/register',[UserController::class,'register']);
