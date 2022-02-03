@@ -229,3 +229,15 @@ body {
     color: white;
     padding: 8px 14px;
 }
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    width: 100%;
+}
+
+.message__none {
+    font-weight: 550;
+}
