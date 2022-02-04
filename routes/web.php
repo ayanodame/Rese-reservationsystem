@@ -16,9 +16,9 @@ use App\Http\Controllers\SessionController;
 |
 */
 
-Route::get('/',[ShopController::class,'index']);
-Route::get('/register',[UserController::class,'registerView']);
-Route::post('/register',[UserController::class,'register']);
-Route::get('/mypage',[UserController::class,'mypageView'])->middleware('login');
-Route::get('/login',[UserController::class,'loginView']);
-Route::post('/login',[UserController::class,'login']);
+Route::get('/', [ShopController::class, 'index']);
+Route::get('/register', [UserController::class, 'registerView']);
+Route::post('/register', [UserController::class, 'register']);
+Route::get('/mypage', [UserController::class, 'mypageView']);
+Route::get('/login', [UserController::class, 'loginView']);
+Route::post('/login', [UserController::class, 'login']);
