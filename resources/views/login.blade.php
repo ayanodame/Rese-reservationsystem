@@ -8,9 +8,9 @@
 @section('main')
 <p>{{$text}}</p>
 <form action="/login" method="post">
-@csrf
-<input type="text" name="email"></td>
-<input type="password" name="password"></td>
-<input type="submit" value="送信"></td>
+  @csrf
+  <input type="text" name="email">
+  <input type="password" name="password">
+  <input type="submit" value="送信">
 </form>
 @endsection
