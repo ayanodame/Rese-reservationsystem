@@ -33,7 +33,7 @@ class UserController extends Controller
 
     public function loginView(Request $request)
     {
-        $text = ['text' => 'ログインして下さい。'];
+        $text = ['text' => ''];
         return view('login', $text);
     }
 
@@ -45,9 +45,9 @@ class UserController extends Controller
             'email' => $email,
             'password' => $password
         ])) {
-            $text =   Auth::user()->name . 'さんがログインしました';
+            return redirect('mypage');
         } else {
-            $text = 'ログインに失敗しました';
+            $text = 'ログインに失敗しました。';
         }
         return view('login', ['text' => $text]);
     }
