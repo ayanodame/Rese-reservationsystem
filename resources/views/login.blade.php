@@ -18,10 +18,10 @@
     <div class="box__title">
       <p class="box__title__name">Login</p>
     </div>
-    <div class="login__message">
-      <p>{{$text}}</p>
-    </div>
     <div class="box__content">
+      <div class="login__message">
+        <p>{{$text}}</p>
+      </div>
       <form action="/login" method="post">
         @csrf
         <div class="box__content__form">
