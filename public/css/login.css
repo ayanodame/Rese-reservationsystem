@@ -32,6 +32,11 @@
     background-color: white;
 }
 
+.message__login-error {
+    color: red;
+    font-size: 13px;
+}
+
 .box__content__form {
     padding: 10px 20px;
     display: flex;

@@ -19,8 +19,8 @@
       <p class="box__title__name">Login</p>
     </div>
     <div class="box__content">
-      <div class="login__message">
-        <p>{{$text}}</p>
+      <div class="box__content__message">
+        <p class="message__login-error">{{$text}}</p>
       </div>
       <form action="/login" method="post">
         @csrf
