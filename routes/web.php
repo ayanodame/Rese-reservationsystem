@@ -20,6 +20,6 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/register', [UserController::class, 'registerView']);
 Route::post('/register', [UserController::class, 'register']);
-Route::get('/mypage', [UserController::class, 'mypageView']);
-Route::get('/login', [UserController::class, 'loginView']);
+Route::get('/mypage', [UserController::class, 'mypageView'])->middleware('auth');
+Route::get('/login', [UserController::class, 'loginView'])->name('login');
 Route::post('/login', [UserController::class, 'login']);
