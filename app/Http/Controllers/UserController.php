@@ -34,8 +34,8 @@ class UserController extends Controller
 
     public function loginView(Request $request)
     {
-        $text = ['text' => ''];
-        return view('login', $text);
+        $errorMessage = ['errorMessage' => ''];
+        return view('login', $errorMessage);
     }
 
     public function login(LoginRequest $request)
@@ -48,8 +48,8 @@ class UserController extends Controller
         ])) {
             return redirect('mypage');
         } else {
-            $text = 'ログインに失敗しました。';
+            $errorMessage = 'ログインに失敗しました。';
         }
-        return view('login', ['text' => $text]);
+        return view('login', ['errorMessage' => $errorMessage]);
     }
 }
