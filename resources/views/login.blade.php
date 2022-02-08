@@ -43,7 +43,7 @@
           </div>
           <div class="form__text">
             <img class="form__text__image" src="icon/カギアイコン.svg" alt="カギアイコン">
-            <input type="text" class="form__text__password" name="password" placeholder="Password" value="{{ old('password') }}">
+            <input type="password" class="form__text__password" name="password" placeholder="Password" value="{{ old('password') }}">
           </div>
         </div>
         <div class="box__content__button">
