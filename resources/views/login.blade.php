@@ -20,7 +20,7 @@
     </div>
     <div class="box__content">
       <div class="box__content__message">
-        <p class="message__login-error">{{$text}}</p>
+        <p class="message__login-error">{{$errorMessage}}</p>
       </div>
       <form action="/login" method="post">
         @csrf
