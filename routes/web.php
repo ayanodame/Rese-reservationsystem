@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,9 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/',[ShopController::class,'index']);
-Route::get('/register',[UserController::class,'registerView']);
-Route::post('/register',[UserController::class,'register']);
+Route::get('/', [ShopController::class, 'index']);
+Route::get('/register', [UserController::class, 'registerView']);
+Route::post('/register', [UserController::class, 'register']);
+Route::get('/mypage', [UserController::class, 'mypageView'])->middleware('auth');
+Route::get('/login', [UserController::class, 'loginView'])->name('login');
+Route::post('/login', [UserController::class, 'login']);
