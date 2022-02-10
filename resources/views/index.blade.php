@@ -2,7 +2,7 @@
 @section('title','飲食店一覧')
 
 @section('css')
-  <link rel="stylesheet" href="{{ asset('css/shoplist.css') }}">
+<link rel="stylesheet" href="{{ asset('css/shoplist.css') }}">
 @endsection
 
 @section('search')
@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="card__button">
-        <a href="店舗詳細ページへ" class="card__button_shop-detail">詳しくみる</a>
+        <a href="/detail/{{$shop->id}}" class="card__button_shop-detail">詳しくみる</a>
       </div>
     </div>
     @endforeach
