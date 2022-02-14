@@ -23,7 +23,7 @@ class ShopController extends Controller
     public function detaillView(Shop $shop)
     {
         $shopData = [
-            'item' => $shop,
+            'items' => $shop,
         ];
         return view('shopdetail', $shopData);
     }
