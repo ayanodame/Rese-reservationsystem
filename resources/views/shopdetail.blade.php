@@ -20,14 +20,37 @@
     <p>予約</p>
     <form action="/reserve" method="post">
       @csrf
-      <input type="hidden" name="name" value="{{$items->name}}">
+      <input type="hidden" name="name" value="{{$items->id}}">
       <input type="date" name="date">
-      <!--時間の繰り返し文がわからない・・・ 30分ごと追加 optionにかませるtime型リストを作る-->
 
-      <select name="input_time" value="">
-        <option value="input_time">{{$items->open_time}}</option>
+      <!--時間のプルダウンリストを作成するための繰り返し文 -->
+      <?php
+      $reservedTimeList = array();
+      $calcTime = date("H:i", strtotime($items->open_time)); //開始時刻を定義
+      $endTime = date("H:i", strtotime($items->close_time)); //終了時刻を定義
+
+      array_push($reservedTimeList, $calcTime); //$reservedTimeListの配列に開始時刻を追加
+      while (true) {  //下記を繰り返します。
+        $calcTime = date("H:i", strtotime('+30 minute', strtotime($calcTime)));
+        //$calcTime＝30分ずつ足していく。
+        if ($calcTime >= $endTime) {  //calcTimeがendTimeより大きい場合は下記を実行して繰り返しを終了。
+          array_push($reservedTimeList, $endTime);
+          //reservedTimeListの配列にendTimeの時間を追加。
+          break;
+        }
+
+        array_push($reservedTimeList, $calcTime);
+        //reservedTimeListに$calcTime(=30分ずつ足した時間)の配列を繰り返し追加する。
+      }
+      ?>
+      <!--ここまで-->
+
+      <select name="time" value="">
+        @foreach($reservedTimeList as $time)
+        <option value="{{$time}}">{{$time}}</option>
+        @endforeach
       </select>
-      <select name="input_people">
+      <select name="people">
         @for($people=1; $people<=10; $people++) <option value="{{$people}}">{{$people}}人</option>
           @endfor
       </select>
