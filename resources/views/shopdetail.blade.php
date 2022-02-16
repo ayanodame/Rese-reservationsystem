@@ -8,56 +8,68 @@
 
 
 @section('main')
-<main>
-  <section>
-    <img src="{{$items->image_url}}" alt="{{$items->name}}">
-    <p>{{$items->name}}</p>
-    <p>{{$items->area->name}}</p>
-    <p>{{$items->genre->name}}</p>
-    <p>{{$items->summary}}</p>
+<main class="system-reservation">
+  <section class="shopdetail">
+    <div class="infomation">
+      <div class="infomation__title">
+        <a href="/" class="infomation__title__button">&lt;</a>
+        <p class="infomation__top__shopname">{{$items->name}}</p>
+      </div>
+      <div class="infomation__image">
+        <img src="{{$items->image_url}}" alt="{{$items->name}}" class="infomation__image__shop">
+      </div>
+      <div class="infomation__tag">
+        <p class="infomation__tag__area"><span class="hushtag">#</span>{{$items->area->name}}</p>
+        <p class="infomation__tag__genre"><span class="hushtag">#</span>{{$items->genre->name}}</p>
+      </div>
+      <div class="infomation__summary">
+        <p>{{$items->summary}}</p>
+      </div>
+    </div>
   </section>
-  <aside>
-    <p>予約</p>
-    <form action="/reserve" method="post">
-      @csrf
-      <input type="hidden" name="name" value="{{$items->id}}">
-      <input type="date" name="date">
+  <aside class="shop-reserve">
+    <div class="reservation">
+      <p class="reservation__title">予約</p>
+      <form action="/reserve" method="post">
+        @csrf
+        <input type="hidden" name="name" value="{{$items->id}}">
+        <input type="date" name="date" class="reservation__date">
 
-      <!--時間のプルダウンリストを作成するための繰り返し文 -->
-      <?php
-      $reservedTimeList = array();
-      $calcTime = date("H:i", strtotime($items->open_time)); //開始時刻を定義
-      $endTime = date("H:i", strtotime($items->close_time)); //終了時刻を定義
+        <!--時間のプルダウンリストを作成するための繰り返し文 -->
+        <?php
+        $reservedTimeList = array();
+        $calcTime = date("H:i", strtotime($items->open_time)); //開始時刻を定義
+        $endTime = date("H:i", strtotime($items->close_time)); //終了時刻を定義
 
-      array_push($reservedTimeList, $calcTime); //$reservedTimeListの配列に開始時刻を追加
-      while (true) {  //下記を繰り返します。
-        $calcTime = date("H:i", strtotime('+30 minute', strtotime($calcTime)));
-        //$calcTime＝30分ずつ足していく。
-        if ($calcTime >= $endTime) {  //calcTimeがendTimeより大きい場合は下記を実行して繰り返しを終了。
-          array_push($reservedTimeList, $endTime);
-          //reservedTimeListの配列にendTimeの時間を追加。
-          break;
+        array_push($reservedTimeList, $calcTime); //$reservedTimeListの配列に開始時刻を追加
+        while (true) {  //下記を繰り返します。
+          $calcTime = date("H:i", strtotime('+30 minute', strtotime($calcTime)));
+          //$calcTime＝30分ずつ足していく。
+          if ($calcTime >= $endTime) {  //calcTimeがendTimeより大きい場合は下記を実行して繰り返しを終了。
+            array_push($reservedTimeList, $endTime);
+            //reservedTimeListの配列にendTimeの時間を追加。
+            break;
+          }
+
+          array_push($reservedTimeList, $calcTime);
+          //reservedTimeListに$calcTime(=30分ずつ足した時間)の配列を繰り返し追加する。
         }
+        ?>
+        <!--ここまで-->
 
-        array_push($reservedTimeList, $calcTime);
-        //reservedTimeListに$calcTime(=30分ずつ足した時間)の配列を繰り返し追加する。
-      }
-      ?>
-      <!--ここまで-->
+        <select name="time" class="reservation__time">
+          @foreach($reservedTimeList as $time)
+          <option value="{{$time}}">{{$time}}</option>
+          @endforeach
+        </select>
+        <select name="people" class="reservation__people">
+          @for($people=1; $people<=10; $people++) <option value="{{$people}}">{{$people}}人</option>
+            @endfor
+        </select>
 
-      <select name="time" value="">
-        @foreach($reservedTimeList as $time)
-        <option value="{{$time}}">{{$time}}</option>
-        @endforeach
-      </select>
-      <select name="people">
-        @for($people=1; $people<=10; $people++) <option value="{{$people}}">{{$people}}人</option>
-          @endfor
-      </select>
-      <p>{{$items->name}}</p>
-      <input type="submit" value="予約する">
-    </form>
-
+        <input type="submit" value="予約する" class="reservation__button">
+      </form>
+    </div>
   </aside>
 </main>
 @endsection
