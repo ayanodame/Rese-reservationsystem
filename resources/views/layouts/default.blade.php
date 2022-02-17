@@ -23,7 +23,7 @@
         <a href="/" class="menu-title__name">Rese</a>
       </div>
     </div>
-    @yield('search')
+    @yield('side')
   </header>
 
   @yield('main')
