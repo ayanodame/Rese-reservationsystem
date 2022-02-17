@@ -2,10 +2,10 @@
 @section('title','飲食店一覧')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/shoplist.css') }}">
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
 
-@section('search')
+@section('side')
 <div class="search-form">
   <form action="/" method="get">
     @csrf
