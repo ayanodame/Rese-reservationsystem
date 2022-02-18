@@ -12,9 +12,6 @@
   <form action="/reserve" method="post" class="reservation__form" id="reserveForm">
     @csrf
     <input type="hidden" name="name" value="{{$items->id}}">
-    @if (Auth::check())
-    <input type="hidden" name="user" value="{{$user->id}}">
-    @endif
     <input type="date" name="date" class="reservation__date">
 
     <!--時間のプルダウンリストを作成するための繰り返し文 -->
@@ -49,29 +46,48 @@
         @endfor
     </select>
 
-    <div class="reservation__check" id="reserveCheck">
-      <!--ここ、表タグにすること-->
-      <div class="check__shop">
-        <p class="check__shop__title">Shop:</p>
-        <p class="check__shop__output" id="shopName">{{$items->name}}</p>
-      </div>
-      <div class="check__date">
-        <p class="check__date__title">Date:</p>
-        <p class="check__date__output" id="shopDate"></p>
-      </div>
-      <div class="check__time">
-        <p class="check__time__title">Time:</p>
-        <p class="check__time__output" id="shopTime"></p>
-      </div>
-      <div class="check__number">
-        <p class="check__number__title">Number:</p>
-        <p class="check__number__output" id="shopNumber"></p><span class="check__number__people">人</span>
-      </div>
+    <table class="reservation__check" id="reserveCheck">
+      <tr class="check__shop">
+        <th class="check__shop__title">
+          <p class="check__shop__title-word">Shop</p>
+        </th>
+        <td class="check__shop__output">
+          <p class="check__shop__output-word" id="shopName">{{$items->name}}</p>
+        </td>
+      </tr>
+      <tr class="check__date">
+        <th class="check__date__title">
+          <p class="check__date__title-word">Date</p>
+        </th>
+        <td class="check__date__output">
+          <p class="check__date__output-word" id="shopDate"></p>
+        </td>
+      </tr>
+      <tr class="check__time">
+        <th class="check__time__title">
+          <p class="check__time__title-word">Time</p>
+        </th>
+        <td class="check__time__output">
+          <p class="check__time__output-word" id="shopTime"></p>
+        </td>
+      </tr>
+      <tr class="check__number">
+        <th class="check__number__title">
+          <p class="check__number__title-word">Number</p>
+        </th>
+        <td class="check__number__output">
+          <p class="check__number__output-word" id="shopNumber"></p><span class="check__number__people">人</span>
+        </td>
+      </tr>
+    </table>
 
-
-    </div>
-
+    @if (Auth::check())
+    <input type="hidden" name="user" value="{{$user->id}}">
     <input type="submit" value="予約する" class="reservation__button">
+    @else
+    <a href="/login" class="reservation__login">ログインする</a>
+    @endif
+
   </form>
 </div>
 @endsection
