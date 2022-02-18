@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
@@ -22,8 +24,10 @@ class ShopController extends Controller
 
     public function detaillView(Shop $shop)
     {
+        $user = Auth::user();
         $shopData = [
             'items' => $shop,
+            'user' => $user,
         ];
         return view('shopdetail', $shopData);
     }
