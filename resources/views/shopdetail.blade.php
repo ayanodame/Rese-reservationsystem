@@ -12,6 +12,9 @@
   <form action="/reserve" method="post" class="reservation__form" id="reserveForm">
     @csrf
     <input type="hidden" name="name" value="{{$items->id}}">
+    @if (Auth::check())
+    <input type="hidden" name="user" value="{{$user->id}}">
+    @endif
     <input type="date" name="date" class="reservation__date">
 
     <!--時間のプルダウンリストを作成するための繰り返し文 -->
@@ -47,6 +50,7 @@
     </select>
 
     <div class="reservation__check" id="reserveCheck">
+      <!--ここ、表タグにすること-->
       <div class="check__shop">
         <p class="check__shop__title">Shop:</p>
         <p class="check__shop__output" id="shopName">{{$items->name}}</p>
