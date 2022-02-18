@@ -63,7 +63,7 @@
     display: flex;
     flex-direction: column;
     background-color: blue;
-    width: 500px;
+    width: 45%;
     height: 500px;
     padding: 30px 20px;
     border-radius: 5px;
@@ -93,12 +93,12 @@
 }
 
 .reservation__date {
-    width: 200px;
+    width: 40%;
 }
 
 .reservation__time,
 .reservation__number {
-    width: 450px;
+    width: 90%;
 }
 
 .reservation__check {
