@@ -3,13 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Shop;
+use App\Http\Requests\ReserveRequest;
 use App\Models\Reservation;
+
 
 class ReservationController extends Controller
 {
-    public function register(Request $request)
+    public function register(ReserveRequest $request)
     {
-        //
+        $reservation = Reservation::create([
+            'user_id' => $request->user_id,
+            'shop_id' => $request->shop_id,
+            'use_date' => $request->use_date,
+            'use_time' => $request->use_time,
+            'people' => $request->people,
+        ]);
+        unset($reservation['_token']);
+        return view('reserved');
     }
 }
