@@ -86,10 +86,42 @@
 .reservation__date,
 .reservation__time,
 .reservation__number {
-    margin: 10px 0px;
-    padding: 5px 0px;
+    padding: 5px 0px 5px 5px;
     border-radius: 5px;
     border: none;
+    cursor: pointer;
+}
+
+.reservation__wrap-time,
+.reservation__wrap-number {
+    position: relative;
+    display: inline-block;
+    width: 90%;
+    padding: 15px 0px;
+}
+
+.reservation__wrap-time::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: url(../icon/矢印アイコン\　下4色変え.svg) no-repeat center
+        center / auto 100%;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+.reservation__wrap-number::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: url(../icon/矢印アイコン\　下4色変え.svg) no-repeat center
+        center / auto 100%;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 10px;
 }
 
 .reservation__date {
@@ -98,7 +130,10 @@
 
 .reservation__time,
 .reservation__number {
-    width: 90%;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .reservation__check {
@@ -154,7 +189,7 @@
     cursor: pointer;
 }
 
-.reservation__login {
+.reservation__login-button {
     text-decoration: none;
     position: absolute;
     bottom: 0;
@@ -167,4 +202,14 @@
     cursor: pointer;
     text-align: center;
     padding: 20px 0px;
+}
+
+.reservation__login-message {
+    color: white;
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
 }
