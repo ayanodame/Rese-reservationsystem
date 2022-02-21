@@ -12,7 +12,9 @@
   <form action="/reserve" method="post" class="reservation__form" id="reserveForm">
     @csrf
     <input type="hidden" name="name" value="{{$items->id}}">
-    <input type="date" name="date" class="reservation__date">
+    <input type="date" name="date" class="reservation__date" min="<?php $today = date("Y-m-d");
+                                                                  $tomorrow = date("Y-m-d", strtotime('+1 day', strtotime($today)));
+                                                                  print($tomorrow); ?>">
 
     <!--時間のプルダウンリストを作成するための繰り返し文 -->
     <?php
