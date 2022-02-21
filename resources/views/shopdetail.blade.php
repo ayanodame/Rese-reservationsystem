@@ -12,8 +12,8 @@
   <form action="/reserve" method="post" class="reservation__form" id="reserveForm">
     @csrf
     <input type="hidden" name="shop_id" value="{{$items->id}}">
-    @if($errors->has('date'))
-    <p class="error-message">{{$errors->first('date')}}</p>
+    @if($errors->has('use_date'))
+    <p class="error-message">{{$errors->first('use_date')}}</p>
     @endif
     <input type="date" name="use_date" class="reservation__date" min="<?php $today = date("Y-m-d");
                                                                       $tomorrow = date("Y-m-d", strtotime('+1 day', strtotime($today)));
@@ -91,7 +91,7 @@
     </table>
 
     @if (Auth::check())
-    <input type="hidden" name="user" value="{{$user->id}}">
+    <input type="hidden" name="user_id" value="{{$user->id}}">
     <input type="submit" value="予約する" class="reservation__button">
     @else
     <p class="reservation__login-message">予約登録にはログインが必要です</p>
