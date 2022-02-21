@@ -24,7 +24,15 @@ class ReserveRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'date' => 'required|date',
+            'time' => 'required|time',
+            'people' => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            "required" => "必須項目です。",
         ];
     }
 }
