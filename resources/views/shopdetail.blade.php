@@ -11,10 +11,13 @@
   <p class="reservation__title">予約</p>
   <form action="/reserve" method="post" class="reservation__form" id="reserveForm">
     @csrf
-    <input type="hidden" name="name" value="{{$items->id}}">
-    <input type="date" name="date" class="reservation__date" min="<?php $today = date("Y-m-d");
-                                                                  $tomorrow = date("Y-m-d", strtotime('+1 day', strtotime($today)));
-                                                                  print($tomorrow); ?>">
+    <input type="hidden" name="shop_id" value="{{$items->id}}">
+    @if($errors->has('date'))
+    <p class="error-message">{{$errors->first('date')}}</p>
+    @endif
+    <input type="date" name="use_date" class="reservation__date" min="<?php $today = date("Y-m-d");
+                                                                      $tomorrow = date("Y-m-d", strtotime('+1 day', strtotime($today)));
+                                                                      print($tomorrow); ?>">
 
     <!--時間のプルダウンリストを作成するための繰り返し文 -->
     <?php
@@ -39,14 +42,14 @@
     <!--ここまで-->
 
     <div class="reservation__wrap-time">
-      <select name="time" class="reservation__time">
+      <select name="use_time" class="reservation__time">
         @foreach($reservedTimeList as $time)
         <option value="{{$time}}">{{$time}}</option>
         @endforeach
       </select>
     </div>
     <div class="reservation__wrap-number">
-      <select name="number" class="reservation__number">
+      <select name="people" class="reservation__number">
         @for($people=1; $people<=10; $people++) <option value="{{$people}}">{{$people}}人</option>
           @endfor
       </select>
