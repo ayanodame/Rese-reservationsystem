@@ -41,6 +41,9 @@
     ?>
     <!--ここまで-->
 
+    @if($errors->has('use_time'))
+    <p class="error-message">{{$errors->first('use_time')}}</p>
+    @endif
     <div class="reservation__wrap-time">
       <select name="use_time" class="reservation__time">
         @foreach($reservedTimeList as $time)
@@ -48,6 +51,10 @@
         @endforeach
       </select>
     </div>
+
+    @if($errors->has('people'))
+    <p class="error-message">{{$errors->first('people')}}</p>
+    @endif
     <div class="reservation__wrap-number">
       <select name="people" class="reservation__number">
         @for($people=1; $people<=10; $people++) <option value="{{$people}}">{{$people}}人</option>
