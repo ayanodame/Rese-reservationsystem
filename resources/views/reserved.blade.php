@@ -1,2 +1,18 @@
 <!-- 予約完了ページ用　-->
-予約ありがとう。
+@extends('layouts.default')
+@section('title','予約完了')
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/reserved.css') }}">
+@endsection
+
+
+@section('main')
+<main class="thanks">
+  <div class="box">
+    <p class="box__message">ご予約ありがとうございます</p>
+    <a class="box__button" href="javascript:history.back()">戻る</a>
+  </div>
+</main>
+
+@endsection
