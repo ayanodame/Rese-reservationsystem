@@ -86,10 +86,14 @@
 .reservation__date,
 .reservation__time,
 .reservation__number {
-    padding: 5px 0px 5px 5px;
+    padding: 8px 0px 8px 5px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
+}
+
+.reservation__date {
+    margin-bottom: 20px;
 }
 
 .reservation__wrap-time,
@@ -97,7 +101,7 @@
     position: relative;
     display: inline-block;
     width: 90%;
-    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .reservation__wrap-time::after {
@@ -108,7 +112,7 @@
         center / auto 100%;
     display: inline-block;
     position: absolute;
-    top: 25px;
+    top: 8px;
     right: 10px;
 }
 
@@ -120,7 +124,7 @@
         center / auto 100%;
     display: inline-block;
     position: absolute;
-    top: 25px;
+    top: 8px;
     right: 10px;
 }
 
@@ -212,4 +216,10 @@
     width: 100%;
     font-size: 12px;
     text-align: center;
+}
+
+.error-message {
+    color: white;
+    font-size: 12px;
+    padding-bottom: 5px;
 }
