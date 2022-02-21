@@ -36,15 +36,19 @@
     ?>
     <!--ここまで-->
 
-    <select name="time" class="reservation__time">
-      @foreach($reservedTimeList as $time)
-      <option value="{{$time}}">{{$time}}</option>
-      @endforeach
-    </select>
-    <select name="number" class="reservation__number">
-      @for($people=1; $people<=10; $people++) <option value="{{$people}}">{{$people}}人</option>
-        @endfor
-    </select>
+    <div class="reservation__wrap-time">
+      <select name="time" class="reservation__time">
+        @foreach($reservedTimeList as $time)
+        <option value="{{$time}}">{{$time}}</option>
+        @endforeach
+      </select>
+    </div>
+    <div class="reservation__wrap-number">
+      <select name="number" class="reservation__number">
+        @for($people=1; $people<=10; $people++) <option value="{{$people}}">{{$people}}人</option>
+          @endfor
+      </select>
+    </div>
 
     <table class="reservation__check" id="reserveCheck">
       <tr class="check__shop">
@@ -85,7 +89,8 @@
     <input type="hidden" name="user" value="{{$user->id}}">
     <input type="submit" value="予約する" class="reservation__button">
     @else
-    <a href="/login" class="reservation__login">ログインする</a>
+    <p class="reservation__login-message">予約登録にはログインが必要です</p>
+    <a href="/login" class="reservation__login-button">ログインする</a>
     @endif
 
   </form>
