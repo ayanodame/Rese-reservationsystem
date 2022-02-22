@@ -2,16 +2,15 @@
 @section('title','Rese ログイン')
 
 @section('css')
+@if(app('env')=='local')
 <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+@endif
+@if(app('env')=='production')
+<link rel="stylesheet" href="{{ secure_asset('css/login.css') }}">
+@endif
 @endsection
 
 @section('main')
-
-<!--<input type="text" name="email">
-<input type="password" name="password">
-<input type="submit" value="送信">
-</form> -->
-
 
 <main class="login">
   <div class="box">

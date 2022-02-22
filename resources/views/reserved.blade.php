@@ -3,7 +3,12 @@
 @section('title','予約完了')
 
 @section('css')
+@if(app('env')=='local')
 <link rel="stylesheet" href="{{ asset('css/reserved.css') }}">
+@endif
+@if(app('env')=='production')
+<link rel="stylesheet" href="{{ secure_asset('css/reserved.css') }}">
+@endif
 @endsection
 
 
