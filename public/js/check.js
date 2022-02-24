@@ -11,7 +11,7 @@ window.onload = function () {
 }
 
 function getValue() {
-    var $dategetValue = document.getElementById( "inputDate" ).value;
+    var $dategetValue = document.getElementById("inputDate").value;
     document.getElementById("outputDate").innerHTML = $dategetValue;
     var $timegetValue = document.getElementById( "inputTime" ).value;
     document.getElementById("outputTime").innerHTML = $timegetValue;

@@ -22,7 +22,7 @@
     @endif
     <input type="date" name="use_date" class="reservation__date" min="<?php $today = date("Y-m-d");
                                                                       $tomorrow = date("Y-m-d", strtotime('+1 day', strtotime($today)));
-                                                                      print($tomorrow); ?>" id="inputDate">
+                                                                      print($tomorrow); ?>" id="inputDate" value="{{ old('date')}}">
 
     <!--時間のプルダウンリストを作成するための繰り返し文 -->
     <?php
