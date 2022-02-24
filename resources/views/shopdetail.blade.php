@@ -14,7 +14,7 @@
 @section('side')
 <div class="reservation">
   <p class="reservation__title">予約</p>
-  <form action="/reserve" method="post" class="reservation__form" id="reserveForm">
+  <form action="/reserve" method="post" class="reservation__form">
     @csrf
     <input type="hidden" name="shop_id" value="{{$items->id}}">
     @if($errors->has('use_date'))
@@ -22,7 +22,7 @@
     @endif
     <input type="date" name="use_date" class="reservation__date" min="<?php $today = date("Y-m-d");
                                                                       $tomorrow = date("Y-m-d", strtotime('+1 day', strtotime($today)));
-                                                                      print($tomorrow); ?>">
+                                                                      print($tomorrow); ?>" id="inputDate">
 
     <!--時間のプルダウンリストを作成するための繰り返し文 -->
     <?php
@@ -50,7 +50,7 @@
     <p class="error-message">{{$errors->first('use_time')}}</p>
     @endif
     <div class="reservation__wrap-time">
-      <select name="use_time" class="reservation__time">
+      <select name="use_time" class="reservation__time" id="inputTime">
         @foreach($reservedTimeList as $time)
         <option value="{{$time}}">{{$time}}</option>
         @endforeach
@@ -61,7 +61,7 @@
     <p class="error-message">{{$errors->first('people')}}</p>
     @endif
     <div class="reservation__wrap-number">
-      <select name="people" class="reservation__number">
+      <select name="people" class="reservation__number" id="inputNumber">
         @for($people=1; $people<=10; $people++) <option value="{{$people}}">{{$people}}人</option>
           @endfor
       </select>
@@ -81,7 +81,7 @@
           <p class="check__date__title-word">Date</p>
         </th>
         <td class="check__date__output">
-          <p class="check__date__output-word" id="shopDate"></p>
+          <p class="check__date__output-word" id="outputDate"></p>
         </td>
       </tr>
       <tr class="check__time">
@@ -89,7 +89,7 @@
           <p class="check__time__title-word">Time</p>
         </th>
         <td class="check__time__output">
-          <p class="check__time__output-word" id="shopTime"></p>
+          <p class="check__time__output-word" id="outputTime"></p>
         </td>
       </tr>
       <tr class="check__number">
@@ -97,7 +97,7 @@
           <p class="check__number__title-word">Number</p>
         </th>
         <td class="check__number__output">
-          <p class="check__number__output-word" id="shopNumber"></p><span class="check__number__people">人</span>
+          <p class="check__number__output-word" id="outputNumber"></p><span class="check__number__people">人</span>
         </td>
       </tr>
     </table>
