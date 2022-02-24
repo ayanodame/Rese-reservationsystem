@@ -135,4 +135,10 @@
     </div>
   </section>
 </main>
+@if(app('env')=='local')
+<script src="{{ asset('js/check.js') }}"></script>
+@endif
+@if(app('env')=='production')
+<script src="{{ secure_asset('js/check.js') }}"></script>
+@endif
 @endsection
