@@ -69,6 +69,7 @@
     border-radius: 5px;
     box-shadow: 3px 3px 4px gray;
     position: relative;
+    margin-top: 30px;
 }
 
 .reservation__title {
