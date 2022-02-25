@@ -89,7 +89,9 @@
           <p class="check__time__title-word">Time</p>
         </th>
         <td class="check__time__output">
-          <p class="check__time__output-word" id="outputTime"></p>
+          <p class="check__time__output-word" id="outputTime">
+            <?php $openTime = date("H:i", strtotime($items->open_time));
+            print $openTime; ?></p>
         </td>
       </tr>
       <tr class="check__number">
@@ -97,7 +99,7 @@
           <p class="check__number__title-word">Number</p>
         </th>
         <td class="check__number__output">
-          <p class="check__number__output-word" id="outputNumber"></p><span class="check__number__people">人</span>
+          <p class="check__number__output-word" id="outputNumber">1</p><span class="check__number__people">人</span>
         </td>
       </tr>
     </table>
