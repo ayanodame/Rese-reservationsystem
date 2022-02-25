@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: space-between;
     height: 80px;
-    padding: 30px 50px;
+    padding: 0px 50px 50px 50px;
 }
 
 .header-top {
@@ -23,6 +23,8 @@ body {
     border-radius: 10px;
     box-shadow: 3px 2px 3px gray;
     background-color: blue;
+    margin-top: 30px;
+    z-index: 2;
 }
 
 .menu__line--top,
@@ -68,10 +70,41 @@ body {
 .menu-title {
     height: 50px;
     padding: 10px 30px;
+    margin-top: 30px;
 }
 .menu-title__name {
     color: blue;
     font-size: 30px;
     font-weight: bold;
     text-decoration: none;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: blue;
+}
+
+.drwermenu {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    background: white;
+    transition: 0.7s;
+    text-align: center;
+    z-index: 1;
+}
+
+.user-menu,
+.guest-menu {
+    list-style-type: none;
+    margin-top: 50px;
+}
+
+.drwermenu__content {
+    padding-top: 80px;
+}
+
+.in {
+    transform: translateX(100%);
 }
