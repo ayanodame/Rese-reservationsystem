@@ -14,14 +14,14 @@ class CreateShopsTable extends Migration
     public function up()
     {
         Schema::create('shops', function (Blueprint $table) {
-            $table->id();
-            $table->string('name',50);
+            $table->bigIncrements('id');
+            $table->string('name', 50);
             $table->unsignedBigInteger('area_id');
             $table->unsignedBigInteger('genre_id');
-            $table->string('summary',191);
+            $table->string('summary', 191);
             $table->time('open_time');
             $table->time('close_time');
-            $table->string('image_url',100);
+            $table->string('image_url', 100);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCuurent()->nullable();
         });
