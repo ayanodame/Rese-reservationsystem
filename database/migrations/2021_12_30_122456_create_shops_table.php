@@ -14,7 +14,7 @@ class CreateShopsTable extends Migration
     public function up()
     {
         Schema::create('shops', function (Blueprint $table) {
-            $table->unsignedInteger('id');
+            $table->unsignedInteger('id')->autoIncrement();
             $table->string('name', 50);
             $table->unsignedBigInteger('area_id');
             $table->unsignedBigInteger('genre_id');
