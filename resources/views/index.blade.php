@@ -39,6 +39,7 @@
 
 @section('main')
 
+
 <main class="system-shoplist">
   <section class="shoplist">
     @if($shops->count())
