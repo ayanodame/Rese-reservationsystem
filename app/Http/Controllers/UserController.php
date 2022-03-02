@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Models\User;
+use App\Models\Reservation;
+use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -26,10 +28,10 @@ class UserController extends Controller
         return view('thanks');
     }
 
-    public function mypageView()
+    public function mypageView($id)
     {
-        $user = Auth::user();
-        return view('mypage', ['user' => $user]);
+        $items = Reservation::with('user')->where('id', $id)->first();
+        return view('mypage')->with('items', $items);
     }
 
     public function loginView(Request $request)
