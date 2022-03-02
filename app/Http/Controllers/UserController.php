@@ -30,7 +30,7 @@ class UserController extends Controller
 
     public function mypageView($id)
     {
-        $items = Reservation::with('user')->where('id', $id)->first();
+        $items = Reservation::with('user')->find($id);
         return view('mypage')->with('items', $items);
     }
 

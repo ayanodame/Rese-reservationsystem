@@ -10,11 +10,11 @@
 
 @if (Auth::check())
 <p>{{$items->user->name}}さん</p>
+
 <p>{{$items->shop->name}}</p>
 <p>{{$items->use_date}}</p>
 <p>{{$items->use_time}}</p>
 <p>{{$items->people}}人</p>
-
 
 @else
 <p>ログインしてください</p>
