@@ -9,15 +9,15 @@
 @section('main')
 
 @if (Auth::check())
-<p>{{$items->user->name}}さん</p>
+<p>{{$user->name}}さん</p>
 
+@foreach($items as $item)
 <p>{{$items->shop->name}}</p>
 <p>{{$items->use_date}}</p>
 <p>{{$items->use_time}}</p>
 <p>{{$items->people}}人</p>
+@endforeach
 
-@else
-<p>ログインしてください</p>
 @endif
 
 @endsection
