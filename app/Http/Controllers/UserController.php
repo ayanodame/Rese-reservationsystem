@@ -28,10 +28,15 @@ class UserController extends Controller
         return view('thanks');
     }
 
-    public function mypageView($id)
+    public function mypageView()
     {
-        $items = Reservation::with('user')->find($id);
-        return view('mypage')->with('items', $items);
+        $user = Auth::user();
+        $items = Reservation::with('user')->find($user->id);
+        $data = [
+            'items' => $items,
+            'user' => $user,
+        ];
+        return view('mypage', $data);
     }
 
     public function loginView(Request $request)
