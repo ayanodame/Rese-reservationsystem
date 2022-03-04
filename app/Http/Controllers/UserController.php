@@ -31,9 +31,9 @@ class UserController extends Controller
     public function mypageView()
     {
         $user = Auth::user();
-        $items = Reservation::with('user')->find($user->id);
+        $reservations = Reservation::with('user')->get();
         $data = [
-            'items' => $items,
+            'reservations' => $reservations,
             'user' => $user,
         ];
         return view('mypage', $data);
