@@ -9,7 +9,7 @@
 @section('main')
 <section class="reservation">
   <h2 class="reservation__title">予約状況</h2>
-  @foreach($items as $item)
+  @foreach($reservations as $reservation)
   <div class="reservation__card">
     <div class="reservation__card__header">
       <img src="/icon/シンプルな丸時計のアイコン色変え.svg" alt="時計" class="reservation__card__image">
@@ -22,7 +22,7 @@
         </th>
         <td class="check__shop__output">
           <p class="check__shop__output-word">
-            {{$items->shop->name}}
+            {{$reservation->shop->name}}
           </p>
         </td>
       </tr>
@@ -31,7 +31,7 @@
           <p class="check__date__title-word">Date</p>
         </th>
         <td class="check__date__output">
-          <p class="check__date__output-word">{{$items->use_date}}
+          <p class="check__date__output-word">{{$reservation->use_date}}
           </p>
         </td>
       </tr>
@@ -41,7 +41,7 @@
         </th>
         <td class="check__time__output">
           <p class="check__time__output-word">
-            <?php $useTime = date("H:i", strtotime($items->use_time));
+            <?php $useTime = date("H:i", strtotime($reservation->use_time));
             print $useTime; ?></p>
         </td>
       </tr>
@@ -50,7 +50,7 @@
           <p class="check__number__title-word">Number</p>
         </th>
         <td class="check__number__output">
-          <p class="check__number__output-word">{{$items->people}}<span class="check__number__people">人</span></p>
+          <p class="check__number__output-word">{{$reservation->people}}<span class="check__number__people">人</span></p>
         </td>
       </tr>
     </table>
