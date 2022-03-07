@@ -21,7 +21,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/like', [LikeController::class, 'like']);
-Route::get('/unlike',[LikeController::class,'unlike']);
+Route::get('/unlike', [LikeController::class, 'unlike']);
 Route::get('/register', [UserController::class, 'registerView']);
 Route::post('/register', [UserController::class, 'register']);
 Route::get('/mypage', [UserController::class, 'mypageView'])->middleware('auth');
@@ -29,3 +29,4 @@ Route::get('/login', [UserController::class, 'loginView'])->name('login');
 Route::post('/login', [UserController::class, 'login']);
 Route::get('/detail/{shop}', [ShopController::class, 'detaillView']);
 Route::post('/reserve', [ReservationController::class, 'register']);
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);

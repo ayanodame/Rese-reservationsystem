@@ -33,8 +33,13 @@
       <nav class="drwermenu" id="nav">
         <ul class="drwermenu__content">
           @if (Auth::check())
-          <li class="user-menu"><a href="/" class="menu__link">Home</a></li>
-          <li class="user-menu"><a href="まだ作成してない" class="menu__link">Logout</a></li>
+          <li class="user-menu">
+            <a href="/" class="menu__link">Home</a>
+          </li>
+          <li class="user-menu">
+            <a href="/logout" class="menu__link">Logout</a>
+            </form>
+          </li>
           <li class="user-menu"><a href="/mypage" class="menu__link">Mypage</a></li>
           @else
           <li class="guest-menu"><a href="/" class="menu__link">Home</a></li>
