@@ -43,7 +43,7 @@ class User extends Authenticatable
     ];
 
     public function likes(){
-        return $this->belongsToMany('App\Models\Shop');
+        return $this->hasMany('App\Models\Shop');
     }
 
     public function reservations(){
