@@ -23,17 +23,33 @@
 
 .reservation__card__header {
     display: flex;
+    justify-content: space-between;
     padding: 30px 20px;
 }
 
-.reservation__card__image {
+.reservation__card__title {
+    display: flex;
+}
+
+.reservation__image {
     width: 25px;
 }
 
-.reservation__card__title {
+.reservation__word {
     color: white;
     padding-left: 20px;
     padding-top: 5px;
+}
+
+.delete__button {
+    border: none;
+    background: none;
+}
+
+.delete__image {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
 }
 
 .reservation__card__check {
@@ -169,6 +185,7 @@
 .like__image {
     width: 40px;
     height: 35px;
+    cursor: pointer;
 }
 
 .like__button {

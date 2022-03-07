@@ -15,8 +15,18 @@
     @foreach($reservations as $reservation)
     <div class="reservation__card">
       <div class="reservation__card__header">
-        <img src="/icon/シンプルな丸時計のアイコン色変え.svg" alt="時計" class="reservation__card__image">
-        <p class="reservation__card__title">予約</p>
+        <div class="reservation__card__title">
+          <img src="/icon/シンプルな丸時計のアイコン色変え.svg" alt="時計" class="reservation__image">
+          <p class="reservation__word">予約</p>
+        </div>
+
+        <form action="/delete" action="get">
+          @csrf
+          <input type="hidden" name="id" value="{{$reservation->id}}">
+          <button class="delete__button">
+            <img src="/icon/やや太いバツのアイコン2.svg" alt="削除" class="delete__image">
+          </button>
+        </form>
       </div>
       <table class="reservation__card__check">
         <tr class="check__shop">
