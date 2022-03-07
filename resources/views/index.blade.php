@@ -56,7 +56,31 @@
       </div>
       <div class="card__button">
         <a href="/detail/{{$shop->id}}" class="card__button_shop-detail">詳しくみる</a>
+        @if (Auth::check())
+        @if($shop->is_liked_by_auth_user())
+        <div class="card__like">
+          <form action="/unlike" action="get" 　class="like__form">
+            @csrf
+            <input type="hidden" name="shop_id" value="{{$shop->id}}">
+            <button class="like__button">
+              <img src="/icon/ハートのマーク赤色.svg" alt="いいね" class="like__image">
+            </button>
+          </form>
+        </div>
+        @else
+        <div class="card__like">
+          <form action="/like" action="get" 　class="like__form">
+            @csrf
+            <input type="hidden" name="shop_id" value="{{$shop->id}}">
+            <button class="like__button">
+              <img src="/icon/ハートのマーク.svg" alt="いいね" class="like__image">
+            </button>
+          </form>
+        </div>
+        @endif
+        @endif
       </div>
+
     </div>
     @endforeach
     @else
