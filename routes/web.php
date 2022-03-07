@@ -30,3 +30,4 @@ Route::post('/login', [UserController::class, 'login']);
 Route::get('/detail/{shop}', [ShopController::class, 'detaillView']);
 Route::post('/reserve', [ReservationController::class, 'register']);
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
+Route::get('delete', [ReservationController::class, 'delete']);
