@@ -82,6 +82,8 @@ body {
 .menu__link {
     text-decoration: none;
     color: blue;
+    font-size: 20px;
+    font-weight: 550;
 }
 
 .drwermenu {
@@ -98,11 +100,11 @@ body {
 .user-menu,
 .guest-menu {
     list-style-type: none;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .drwermenu__content {
-    padding-top: 80px;
+    padding-top: 150px;
 }
 
 .in {
