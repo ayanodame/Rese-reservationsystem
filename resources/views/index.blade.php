@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="card__button">
-        <a href="/detail/{{$shop->id}}" class="card__button_shop-detail">詳しくみる</a>
+        <a href="/detail/{{$shop->id}}" class="card__button__shop-detail">詳しくみる</a>
         @if (Auth::check())
         @if($shop->LikedByAuthUser())
         <?php $likeAction = "/unlike";
@@ -80,7 +80,7 @@
     @endforeach
     @else
     <div class="message">
-      <p class="message__none">ご希望のお店がありませんでした。条件を変えて再検索してください。</p>
+      <p class="message__none">ご希望のお店がありませんでした。<br>条件を変えて再検索してください。</p>
     </div>
     @endif
   </section>
