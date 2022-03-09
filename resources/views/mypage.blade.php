@@ -12,12 +12,13 @@
   <section class="reservation">
     <h2 class="reservation__title">予約状況</h2>
     @if($reservations->count())
+    <?php $number = 1; ?>
     @foreach($reservations as $reservation)
     <div class="reservation__card">
       <div class="reservation__card__header">
         <div class="reservation__card__title">
           <img src="/icon/シンプルな丸時計のアイコン色変え.svg" alt="時計" class="reservation__image">
-          <p class="reservation__word">予約</p>
+          <p class="reservation__word">予約<?php print $number++; ?></p>
         </div>
 
         <form action="/delete" action="get">
@@ -97,27 +98,15 @@
         </div>
         <div class="card__button">
           <a href="/detail/{{$like->shop->id}}" class="card__button_shop-detail">詳しくみる</a>
-          @if($like->shop->is_liked_by_auth_user())
           <div class="card__like">
             <form action="/unlike" action="get" 　class="like__form">
               @csrf
               <input type="hidden" name="shop_id" value="{{$like->shop->id}}">
               <button class="like__button">
-                <img src="/icon/ハートのマーク赤色.svg" alt="いいね" class="like__image">
+                <img src="/icon/ハートのマーク赤色.svg"" alt=" いいね" class="like__image">
               </button>
             </form>
           </div>
-          @else
-          <div class="card__like">
-            <form action="/like" action="get" 　class="like__form">
-              @csrf
-              <input type="hidden" name="shop_id" value="{{$like->shop->id}}">
-              <button class="like__button">
-                <img src="/icon/ハートのマーク.svg" alt="いいね" class="like__image">
-              </button>
-            </form>
-          </div>
-          @endif
         </div>
       </div>
       @endforeach
