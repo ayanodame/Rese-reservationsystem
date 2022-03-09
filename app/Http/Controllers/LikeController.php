@@ -10,7 +10,6 @@ class LikeController extends Controller
 {
     public function like(Request $request)
     {
-        $user = Auth::user();
         $like = Like::create([
             'shop_id' => $request->shop_id,
             'user_id' => Auth::id(),
@@ -20,7 +19,7 @@ class LikeController extends Controller
     }
     public function unlike(Request $request)
     {
-        $like=Like::where('shop_id',$request->shop_id)->where('user_id',Auth::id())->first();
+        $like = Like::where('shop_id', $request->shop_id)->where('user_id', Auth::id())->first();
         $like->delete();
         return redirect()->back();
     }
