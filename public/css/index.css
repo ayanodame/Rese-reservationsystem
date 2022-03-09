@@ -173,12 +173,6 @@
 }
 
 @media screen and (max-width: 480px) {
-    .system-header {
-        display: flex;
-        height: 200px;
-        flex-direction: column;
-        padding: 0px 20px 50px 20px;
-    }
     .search-form {
         display: flex;
         flex-wrap: wrap;
