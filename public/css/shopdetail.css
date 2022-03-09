@@ -105,30 +105,6 @@
     padding-bottom: 20px;
 }
 
-.reservation__wrap-time::after {
-    content: "";
-    width: 15px;
-    height: 15px;
-    background: url(../icon/矢印アイコン\　下4色変え.svg) no-repeat center
-        center / auto 100%;
-    display: inline-block;
-    position: absolute;
-    top: 8px;
-    right: 10px;
-}
-
-.reservation__wrap-number::after {
-    content: "";
-    width: 15px;
-    height: 15px;
-    background: url(../icon/矢印アイコン\　下4色変え.svg) no-repeat center
-        center / auto 100%;
-    display: inline-block;
-    position: absolute;
-    top: 8px;
-    right: 10px;
-}
-
 .reservation__date {
     width: 40%;
 }
@@ -136,9 +112,12 @@
 .reservation__time,
 .reservation__number {
     width: 100%;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    background-image: url(../icon/矢印アイコン\　下4色変え.svg);
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
     appearance: none;
+    cursor: pointer;
 }
 
 .reservation__check {
@@ -223,4 +202,48 @@
     color: white;
     font-size: 12px;
     padding-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .shopdetail {
+        width: 45%;
+    }
+    .reservation__date {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .system-header {
+        height: 550px;
+        padding-bottom: 20px;
+    }
+
+    .reservation {
+        padding: 15px;
+        width: 90%;
+    }
+    .reservation__title {
+        font-size: 18px;
+    }
+
+    .reservation__date,
+    .reservation__time,
+    .reservation__number {
+        padding: 5px 0px 5px 3px;
+    }
+
+    .reservation__check {
+        padding-top: 15px;
+        padding-left: 10px;
+        margin-top: 10px;
+    }
+
+    .system-reservation {
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+    .shopdetail {
+        width: 100%;
+    }
 }
