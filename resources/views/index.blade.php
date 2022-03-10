@@ -57,13 +57,13 @@
       <div class="card__button">
         <a href="/detail/{{$shop->id}}" class="card__button__shop-detail">詳しくみる</a>
         @if (Auth::check())
-        @if($shop->LikedByAuthUser())
-        <?php $likeAction = "/unlike";
-        $likeImage = "/icon/ハートのマーク赤色.svg"; ?>
-        @else
-        <?php $likeAction = "/like";
-        $likeImage = "/icon/ハートのマーク.svg"; ?>
-        @endif
+        <?php if ($shop->likedByAuthUser()) {
+          $likeAction = "/unlike";
+          $likeImage = "/icon/ハートのマーク赤色.svg";
+        } else {
+          $likeAction = "/like";
+          $likeImage = "/icon/ハートのマーク.svg";
+        } ?>
         <div class="card__like">
           <form action="{{$likeAction}}" action="get" 　class="like__form">
             @csrf
