@@ -97,7 +97,7 @@
           </div>
         </div>
         <div class="card__button">
-          <a href="/detail/{{$like->shop->id}}" class="card__button_shop-detail">詳しくみる</a>
+          <a href="/detail/{{$like->shop->id}}" class="card__button__shop-detail">詳しくみる</a>
           <div class="card__like">
             <form action="/unlike" action="get" 　class="like__form">
               @csrf

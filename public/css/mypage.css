@@ -161,7 +161,7 @@
     padding-right: 20px;
 }
 
-.card__button_shop-detail {
+.card__button__shop-detail {
     background-color: blue;
     border-radius: 5px;
     height: 20px;
@@ -191,4 +191,103 @@
 .like__button {
     border: none;
     background: none;
+}
+
+@media screen and (max-width: 768px) {
+    .shop-card {
+        height: 200px;
+        width: 40%;
+    }
+    .card__text {
+        padding-top: 15px;
+        padding-left: 10px;
+    }
+    .card__text__name {
+        font-size: 18px;
+    }
+    .text__hushtag-list__area,
+    .text__hushtag-list__genre {
+        font-size: 11px;
+    }
+    .hushtag {
+        font-size: 10px;
+    }
+
+    .card__button {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+    .card__button__shop-detail {
+        height: 10px;
+        padding: 6px 5px;
+        font-size: 8px;
+    }
+    .like__image {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .system-header {
+        height: 80px;
+        padding-bottom: 30px;
+    }
+    .reservation {
+        margin-left: 10px;
+        margin-top: 58px;
+    }
+    .reservation__card {
+        padding-bottom: 0px;
+    }
+
+    .reservation__card__header {
+        padding: 15px 10px;
+    }
+    .reservation__image {
+        width: 18px;
+    }
+    .reservation__word {
+        padding-left: 10px;
+        font-size: 13px;
+    }
+    .delete__image {
+        width: 18px;
+        height: 18px;
+    }
+    .reservation__card__check {
+        margin-left: 10px;
+    }
+
+    .check__shop__title,
+    .check__date__title,
+    .check__time__title,
+    .check__number__title {
+        padding-right: 15px;
+        padding-bottom: 15px;
+    }
+
+    .check__shop__title-word,
+    .check__date__title-word,
+    .check__time__title-word,
+    .check__number__title-word,
+    .check__shop__output-word,
+    .check__date__output-word,
+    .check__time__output-word,
+    .check__number__output-word {
+        font-size: 10px;
+    }
+
+    .likes {
+        margin-left: 20px;
+    }
+
+    .user-name {
+        padding-bottom: 30px;
+    }
+    .shop-card {
+        margin-right: 10px;
+        width: 100%;
+    }
 }

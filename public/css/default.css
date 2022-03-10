@@ -7,6 +7,7 @@ body {
     justify-content: space-between;
     height: 80px;
     padding: 0px 50px 50px 50px;
+    position: relative;
 }
 
 .header-top {
@@ -88,6 +89,8 @@ body {
 
 .drwermenu {
     position: absolute;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100%;
     left: -100%;
