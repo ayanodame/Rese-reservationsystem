@@ -55,14 +55,12 @@ class Shop extends Model
         $items = $query->orderBy('area_id')->orderBy('genre_id')->get();
         return $items;
     }
-    public function LikedByAuthUser()
+    public function likedByAuthUser()
     {
         $id = Auth::id();
         foreach ($this->likes as $like) {
             if ($id = $like->user_id) {
                 return true;
-            } else {
-                return false;
             }
         }
     }
