@@ -62,6 +62,7 @@ class Shop extends Model
             if ($id = $like->user_id) {
                 return true;
             }
+            return false;
         }
     }
 }
