@@ -1,6 +1,3 @@
-if (config('app.env') === 'heroku') {
-URL::forceScheme('https');
-}
 <?php
 
 use Illuminate\Support\Facades\Route;
