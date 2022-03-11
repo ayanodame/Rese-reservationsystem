@@ -1,6 +1,6 @@
 <!-- サンクスページ表示 -->
 @extends('layouts.default')
-@section('title','Rese会員登録完了')
+@section('title','Rese 会員登録完了')
 
 @section('css')
 @if(app('env')=='local')

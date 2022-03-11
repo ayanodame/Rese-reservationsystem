@@ -1,5 +1,5 @@
 @extends('layouts.default')
-@section('title','Rese ログイン')
+@section('title','Rese マイページ')
 
 @section('css')
 @if(app('env')=='local')

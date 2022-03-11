@@ -1,6 +1,6 @@
 <!-- 会員登録ページ　authファイルの中のregisterを参考にする -->
 @extends('layouts.default')
-@section('title','Rese会員登録')
+@section('title','Rese 会員登録')
 
 @section('css')
 @if(app('env')=='local')
