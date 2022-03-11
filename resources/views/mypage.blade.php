@@ -2,7 +2,10 @@
 @section('title','Rese ログイン')
 
 @section('css')
+@if(app('env')=='local')
 <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
+@endif
+<link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
 @endsection
 
 

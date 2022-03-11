@@ -6,9 +6,7 @@
 @if(app('env')=='local')
 <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 @endif
-@if(app('env')=='production')
 <link rel="stylesheet" href="{{ secure_asset('css/register.css') }}">
-@endif
 @endsection
 
 

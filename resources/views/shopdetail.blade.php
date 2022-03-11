@@ -6,9 +6,7 @@
 @if(app('env')=='local')
 <link rel="stylesheet" href="{{ asset('css/shopdetail.css') }}">
 @endif
-@if(app('env')=='production')
 <link rel="stylesheet" href="{{ secure_asset('css/shopdetail.css') }}">
-@endif
 @endsection
 
 @section('side')
@@ -140,7 +138,5 @@
 @if(app('env')=='local')
 <script src="{{ asset('js/check.js') }}"></script>
 @endif
-@if(app('env')=='production')
 <script src="{{ secure_asset('js/check.js') }}"></script>
-@endif
 @endsection
