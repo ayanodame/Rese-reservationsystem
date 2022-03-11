@@ -1,6 +1,8 @@
 <!--飲食店詳細 -->
 @extends('layouts.default')
-@section('title','飲食店一覧')
+@section('title')
+{{$items->name}}
+@endsection
 
 @section('css')
 @if(app('env')=='local')

@@ -1,5 +1,5 @@
 @extends('layouts.default')
-@section('title','飲食店一覧')
+@section('title','Rese')
 
 @section('css')
 @if(app('env')=='local')
