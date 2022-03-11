@@ -43,11 +43,11 @@ class User extends Authenticatable
     ];
 
     public function likes(){
-        return $this->belongsToMany(Shop::class);
+        return $this->hasMany('App\Models\Shop');
     }
 
     public function reservations(){
-        return $this->belongsToMany(Reservation::class)->withPivot('reservation');
+        return $this->hasMany('App\Models\Reservation');
     }
 }
 

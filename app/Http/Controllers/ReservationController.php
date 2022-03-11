@@ -21,4 +21,11 @@ class ReservationController extends Controller
         unset($reservation['_token']);
         return view('reserved');
     }
+    public function delete(Request $request)
+    {
+        $reservations = Reservation::find($request->id);
+        unset($reservations['_token']);
+        $reservations->delete();
+        return redirect('mypage');
+    }
 }

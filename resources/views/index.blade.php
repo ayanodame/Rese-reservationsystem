@@ -56,13 +56,32 @@
         </div>
       </div>
       <div class="card__button">
-        <a href="/detail/{{$shop->id}}" class="card__button_shop-detail">詳しくみる</a>
+        <a href="/detail/{{$shop->id}}" class="card__button__shop-detail">詳しくみる</a>
+        @if (Auth::check())
+        <?php if ($shop->likedByAuthUser()) {
+          $likeAction = "/unlike";
+          $likeImage = "/icon/ハートのマーク赤色.svg";
+        } else {
+          $likeAction = "/like";
+          $likeImage = "/icon/ハートのマーク.svg";
+        } ?>
+        <div class="card__like">
+          <form action="{{$likeAction}}" action="get" 　class="like__form">
+            @csrf
+            <input type="hidden" name="shop_id" value="{{$shop->id}}">
+            <button class="like__button">
+              <img src="{{$likeImage}}" alt="いいね" class="like__image">
+            </button>
+          </form>
+        </div>
+        @endif
       </div>
+
     </div>
     @endforeach
     @else
     <div class="message">
-      <p class="message__none">ご希望のお店がありませんでした。条件を変えて再検索してください。</p>
+      <p class="message__none">ご希望のお店がありませんでした。<br>条件を変えて再検索してください。</p>
     </div>
     @endif
   </section>
