@@ -16,4 +16,12 @@ class Reservation extends Model
         'use_date',
         'use_time',
     ];
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+    public function shop()
+    {
+        return $this->belongsTo('App\Models\Shop');
+    }
 }

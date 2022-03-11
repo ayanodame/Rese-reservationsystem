@@ -12,44 +12,23 @@
 .select-wrap-genre {
     position: relative;
     display: inline-block;
+    width: 100px;
 }
 
 .form__area,
 .form__genre {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    background-image: url(../icon/矢印アイコン\　下4色変え.svg);
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
     appearance: none;
     cursor: pointer;
-}
-
-.select-wrap-area::after {
-    content: "";
-    width: 18px;
-    height: 18px;
-    background: url(../icon/矢印アイコン\　下4色変え.svg) no-repeat center
-        center / auto 100%;
-    display: inline-block;
-    position: absolute;
-    top: 15px;
-    right: 5px;
-}
-
-.select-wrap-genre::after {
-    content: "";
-    width: 18px;
-    height: 18px;
-    background: url(../icon/矢印アイコン\　下4色変え.svg) no-repeat center
-        center / auto 100%;
-    display: inline-block;
-    position: absolute;
-    top: 15px;
-    right: 5px;
 }
 
 .form__area,
 .form__genre,
 .form__keyword {
-    width: 100px;
+    width: 100%;
     height: 35px;
     margin: 5px;
     font-weight: 550;
@@ -145,13 +124,17 @@
 }
 
 .card__button {
-    padding-top: 30px;
+    padding-top: 20px;
     padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
 }
 
-.card__button_shop-detail {
+.card__button__shop-detail {
     background-color: blue;
     border-radius: 5px;
+    height: 20px;
     text-decoration: none;
     color: white;
     padding: 8px 14px;
@@ -167,4 +150,83 @@
 
 .message__none {
     font-weight: 550;
+}
+
+.like__image {
+    width: 40px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.like__button {
+    border: none;
+    background: none;
+}
+
+@media screen and (max-width: 768px) {
+    .form__keyword {
+        width: 110px;
+    }
+    .shop-card {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-form {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0px;
+        height: 200px;
+    }
+
+    .search-form__keyword {
+        width: 100%;
+        border-top: 2px solid lightgray;
+    }
+    .form__keyword {
+        border-left: none;
+        width: 80%;
+    }
+
+    .select-wrap-area,
+    .select-wrap-genre {
+        width: 45%;
+    }
+    .shop-card {
+        width: 43%;
+        height: 200px;
+        margin-left: 15px;
+    }
+    .card__text {
+        padding-top: 15px;
+        padding-left: 10px;
+    }
+    .card__text__name {
+        font-size: 15px;
+        padding-bottom: 10px;
+    }
+    .text__hushtag-list__area,
+    .text__hushtag-list__genre {
+        font-size: 10px;
+    }
+
+    .hushtag {
+        font-size: 9px;
+    }
+
+    .card__button {
+        padding-top: 15px;
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+    .card__button__shop-detail {
+        height: 13px;
+        padding: 5px 10px;
+        font-size: 8px;
+    }
+    .like__image {
+        width: 25px;
+        height: 25px;
+    }
 }

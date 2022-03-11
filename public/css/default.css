@@ -7,6 +7,7 @@ body {
     justify-content: space-between;
     height: 80px;
     padding: 0px 50px 50px 50px;
+    position: relative;
 }
 
 .header-top {
@@ -82,10 +83,14 @@ body {
 .menu__link {
     text-decoration: none;
     color: blue;
+    font-size: 20px;
+    font-weight: 550;
 }
 
 .drwermenu {
     position: absolute;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100%;
     left: -100%;
@@ -98,13 +103,22 @@ body {
 .user-menu,
 .guest-menu {
     list-style-type: none;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .drwermenu__content {
-    padding-top: 80px;
+    padding-top: 150px;
 }
 
 .in {
     transform: translateX(100%);
+}
+
+@media screen and (max-width: 480px) {
+    .system-header {
+        display: flex;
+        height: 200px;
+        flex-direction: column;
+        padding: 0px 20px 50px 20px;
+    }
 }
