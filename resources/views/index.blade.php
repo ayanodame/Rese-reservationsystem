@@ -2,7 +2,7 @@
 @section('title','飲食店一覧')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/index.css') }}">
 @endsection
 
 @section('side')
