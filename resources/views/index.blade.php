@@ -2,6 +2,9 @@
 @section('title','飲食店一覧')
 
 @section('css')
+@if(app('env')=='local')
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+@endif
 <link rel="stylesheet" href="{{ secure_asset('css/index.css') }}">
 @endsection
 
