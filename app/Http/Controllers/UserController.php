@@ -32,7 +32,7 @@ class UserController extends Controller
     public function mypageView()
     {
         $user = Auth::user();
-        $reservations = Reservation::with('user')->get();
+        $reservations = Reservation::where('user_id', Auth::id())->get();
         $likes = Like::where('user_id', Auth::id())->get();
         $data = [
             'reservations' => $reservations,
