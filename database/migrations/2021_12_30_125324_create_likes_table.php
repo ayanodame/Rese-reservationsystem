@@ -16,7 +16,7 @@ class CreateLikesTable extends Migration
         Schema::create('likes', function (Blueprint $table) {
             $table->unsignedInteger('id')->autoIncrement();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('shop_id')->unique();
+            $table->unsignedBigInteger('shop_id');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->nullable();
         });
