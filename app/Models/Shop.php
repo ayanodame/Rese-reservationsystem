@@ -58,10 +58,14 @@ class Shop extends Model
     public function likedByAuthUser()
     {
         $id = Auth::id();
+        $likeArray = array();
         foreach ($this->likes as $like) {
-            if ($id = $like->user_id) {
-                return true;
-            }
+            array_push($likeArray, $like->user_id);
+        }
+
+        if (in_array($id, $likeArray)) {
+            return true;
+        } else {
             return false;
         }
     }
