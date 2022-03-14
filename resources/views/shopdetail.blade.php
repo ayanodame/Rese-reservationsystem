@@ -29,13 +29,14 @@
     $reservedTimeList = array();
     $calcTime = date("H:i", strtotime($items->open_time)); //開始時刻を定義
     $endTime = date("H:i", strtotime($items->close_time)); //終了時刻を定義
+    $lastOrderTime = date("H:i", strtotime('-30 minute', strtotime($endTime)));
 
     array_push($reservedTimeList, $calcTime); //$reservedTimeListの配列に開始時刻を追加
     while (true) {  //下記を繰り返します。
       $calcTime = date("H:i", strtotime('+30 minute', strtotime($calcTime)));
       //$calcTime＝30分ずつ足していく。
-      if ($calcTime >= $endTime) {  //calcTimeがendTimeより大きい場合は下記を実行して繰り返しを終了。
-        array_push($reservedTimeList, $endTime);
+      if ($calcTime >= $lastOrderTime) {  //calcTimeがlastOrderTimeより大きい場合は下記を実行して繰り返しを終了。
+        array_push($reservedTimeList, $lastOrderTime);
         //reservedTimeListの配列にendTimeの時間を追加。
         break;
       }
