@@ -35,6 +35,7 @@ class RegisterRequest extends FormRequest
             "required"=>"必須項目です。",
             "email"=>"メールアドレスの形式で入力してください。",
             "email.unique"=>"登録済みのメールアドレスです。",
+            "email.max"=>"255文字以内で入力してください。",
             "name.max"=>"100文字以内で入力してください。",
             "password.max"=>"50文字以内で入力してください。",
             "password.min"=>"8文字以上で入力してください。",
