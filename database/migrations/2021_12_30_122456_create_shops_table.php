@@ -21,7 +21,7 @@ class CreateShopsTable extends Migration
             $table->string('summary', 191);
             $table->time('open_time');
             $table->time('close_time');
-            $table->string('image_url', 100);
+            $table->string('image_url', 255);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCuurent()->nullable();
         });
