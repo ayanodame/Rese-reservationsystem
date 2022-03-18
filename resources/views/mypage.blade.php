@@ -71,6 +71,7 @@
           </td>
         </tr>
       </table>
+      <a href="/update/{{$reservation->id}}">変更</a>
     </div>
     @endforeach
     @else
