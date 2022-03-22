@@ -37,7 +37,7 @@
     </div>
   </div>
   <div class="icon">
-    <img class="form__text__image" src="/icon/矢印アイコン　右2.svg" alt="→">
+    <img class="icon__image" src="/icon/矢印アイコン　右2.svg" alt="→">
   </div>
   <div class="after">
 
