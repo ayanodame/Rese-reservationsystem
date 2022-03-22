@@ -31,3 +31,5 @@ Route::get('/detail/{shop}', [ShopController::class, 'detaillView']);
 Route::post('/reserve', [ReservationController::class, 'register']);
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 Route::get('delete', [ReservationController::class, 'delete']);
+Route::get('/update/{reservation}', [ReservationController::class, 'updateView']);
+Route::post('/update', [ReservationController::class, 'update']);
