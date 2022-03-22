@@ -52,8 +52,24 @@
     cursor: pointer;
 }
 
+.reservation__card__content {
+    display: flex;
+    position: relative;
+}
+
 .reservation__card__check {
     margin-left: 20px;
+}
+
+.check__update {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    color: blue;
+    background-color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 .check__shop__title,
@@ -256,6 +272,7 @@
         width: 18px;
         height: 18px;
     }
+
     .reservation__card__check {
         margin-left: 10px;
     }

@@ -28,4 +28,18 @@ class ReservationController extends Controller
         $reservations->delete();
         return redirect('mypage');
     }
+    public function updateView(Reservation $reservation)
+    {
+        $reservationData = [
+            'items' => $reservation,
+        ];
+        return view('update', $reservationData);
+    }
+    public function update(ReserveRequest $request)
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        Reservation::where('id', $request->id)->update($form);
+        return redirect('/mypage');
+    }
 }
