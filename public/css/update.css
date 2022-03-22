@@ -1,0 +1,78 @@
+.update {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.before,
+.after {
+    width: 380px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    margin: 30px;
+    background-color: white;
+    box-shadow: 3px 2px 3px gray;
+}
+
+.before__title,
+.after__title {
+    padding: 20px 15px;
+    background-color: blue;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.before__title__name,
+.after__title__name {
+    color: white;
+}
+
+.before__content,
+.after__content {
+    display: flex;
+    padding-top: 35px;
+    padding-left: 20px;
+}
+
+.before__information__shop-title,
+.before__information__date-title,
+.before__information__time-title,
+.before__information__number-title,
+.after__information__shop-title,
+.after__information__date-title,
+.after__information__time-title,
+.after__information__number-title {
+    text-align: left;
+    font-weight: 540;
+    padding-right: 35px;
+    padding-bottom: 18px;
+}
+
+.reservation__date,
+.reservation__time,
+.reservation__number {
+    border: lightgray 1px solid;
+    border-radius: 5px;
+    width: 150px;
+    font-size: 13px;
+}
+
+.update__form {
+    display: flex;
+    position: relative;
+}
+
+.after__button {
+    padding-left: 30px;
+}
+
+.update__button {
+    position: absolute;
+    bottom: 0%;
+    border: none;
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 20px;
+}
