@@ -35,7 +35,7 @@ class ReservationController extends Controller
         ];
         return view('update', $reservationData);
     }
-    public function update(Request $request)
+    public function update(ReserveRequest $request)
     {
         $form = $request->all();
         unset($form['_token']);
