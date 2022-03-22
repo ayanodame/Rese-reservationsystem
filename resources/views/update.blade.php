@@ -78,9 +78,14 @@
           </tr>
           <tr class="after__information__date">
             <th class="after__information__date-title">Date</th>
-            <td class="after__information__date-name"><input type="date" name="use_date" class="reservation__date" min="<?php $today = date("Y-m-d");
-                                                                                                                        $tomorrow = date("Y-m-d", strtotime('+1 day', strtotime($today)));
-                                                                                                                        print($tomorrow); ?>" value="{{ old('date')}}"></td>
+            <td class="after__information__date-name">
+              <input type="date" name="use_date" class="reservation__date" min="<?php $today = date("Y-m-d");
+                                                                                $tomorrow = date("Y-m-d", strtotime('+1 day', strtotime($today)));
+                                                                                print($tomorrow); ?>" value="{{ old('date')}}">
+              @if($errors->has('use_date'))
+              <p class="error-message">{{$errors->first('use_date')}}</p>
+              @endif
+            </td>
           </tr>
           <tr class="after__information__time">
             <th class="after__information__time-title">Time</th>
