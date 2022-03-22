@@ -36,6 +36,9 @@
       </table>
     </div>
   </div>
+  <div class="icon">
+    <img class="form__text__image" src="/icon/矢印アイコン　右2.svg" alt="→">
+  </div>
   <div class="after">
 
     <!--時間のプルダウンリストを作成するための繰り返し文 -->
@@ -68,7 +71,7 @@
       <form action="/update" method="POST" class="update__form">
         @csrf
         <table class="after__information">
-          <input type="hidden" value="{{$items->id}}">
+          <input type="hidden" name="id" value="{{$items->id}}">
           <tr class="after__information__shop">
             <th class="after__information__shop-title">Shop</th>
             <td class="after__information__shop-name">{{$items->shop->name}}</td>
@@ -101,38 +104,4 @@
     </div>
   </div>
 </main>
-
-
-
-
-
-
-<section class="reservation">
-
-
-  <table class="change">
-    <tr>
-      <th class="shop__title">Shop</th>
-      <td class="shop__name"></td>
-    </tr>
-    <th class="date__title">Date</th>
-    <td class="date__name"></td>
-    <tr>
-      <th class="people__title">People</th>
-      <td class="people name"></td>
-    </tr>
-    <tr>
-      <th class="time__title">Time</th>
-      <td class="time__name"><select name="use_time" class="reservation__time">
-          <option value="18:00">18:00</option>
-          <option value="18:30">18:30</option>
-          <option value="19:00">19:00</option>
-          <option value="19:30">19:30</option>
-          <option value="20:00">20:00</option>
-        </select></td>
-    </tr>
-  </table>
-  </form>
-  <img class="form__text__image" src="icon/矢印アイコン　右2.svg" alt="人物アイコン">
-</section>
 @endsection
