@@ -32,46 +32,49 @@
           </button>
         </form>
       </div>
-      <table class="reservation__card__check">
-        <tr class="check__shop">
-          <th class="check__shop__title">
-            <p class="check__shop__title-word">Shop</p>
-          </th>
-          <td class="check__shop__output">
-            <p class="check__shop__output-word">
-              {{$reservation->shop->name}}
-            </p>
-          </td>
-        </tr>
-        <tr class="check__date">
-          <th class="check__date__title">
-            <p class="check__date__title-word">Date</p>
-          </th>
-          <td class="check__date__output">
-            <p class="check__date__output-word">{{$reservation->use_date}}
-            </p>
-          </td>
-        </tr>
-        <tr class="check__time">
-          <th class="check__time__title">
-            <p class="check__time__title-word">Time</p>
-          </th>
-          <td class="check__time__output">
-            <p class="check__time__output-word">
-              <?php $useTime = date("H:i", strtotime($reservation->use_time));
-              print $useTime; ?></p>
-          </td>
-        </tr>
-        <tr class="check__number">
-          <th class="check__number__title">
-            <p class="check__number__title-word">Number</p>
-          </th>
-          <td class="check__number__output">
-            <p class="check__number__output-word">{{$reservation->people}}<span class="check__number__people">人</span></p>
-          </td>
-        </tr>
-      </table>
-      <a href="/update/{{$reservation->id}}">変更</a>
+      <div class="reservation__card__content">
+        <table class="reservation__card__check">
+          <tr class="check__shop">
+            <th class="check__shop__title">
+              <p class="check__shop__title-word">Shop</p>
+            </th>
+            <td class="check__shop__output">
+              <p class="check__shop__output-word">
+                {{$reservation->shop->name}}
+              </p>
+            </td>
+          </tr>
+          <tr class="check__date">
+            <th class="check__date__title">
+              <p class="check__date__title-word">Date</p>
+            </th>
+            <td class="check__date__output">
+              <p class="check__date__output-word">{{$reservation->use_date}}
+              </p>
+            </td>
+          </tr>
+          <tr class="check__time">
+            <th class="check__time__title">
+              <p class="check__time__title-word">Time</p>
+            </th>
+            <td class="check__time__output">
+              <p class="check__time__output-word">
+                <?php $useTime = date("H:i", strtotime($reservation->use_time));
+                print $useTime; ?></p>
+            </td>
+          </tr>
+          <tr class="check__number">
+            <th class="check__number__title">
+              <p class="check__number__title-word">Number</p>
+            </th>
+            <td class="check__number__output">
+              <p class="check__number__output-word">{{$reservation->people}}<span class="check__number__people">人</span></p>
+            </td>
+          </tr>
+        </table>
+        <a href="/update/{{$reservation->id}}" class="check__update">変更</a>
+      </div>
+
     </div>
     @endforeach
     @else
