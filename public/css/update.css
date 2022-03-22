@@ -7,7 +7,7 @@
 
 .before,
 .after {
-    width: 380px;
+    width: 40%;
     border-radius: 5px;
     padding-bottom: 20px;
     margin: 30px;
@@ -93,4 +93,40 @@
 
 .icon {
     width: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .before,
+    .after {
+        padding-bottom: 50px;
+    }
+
+    .before__content,
+    .after__content {
+        padding-top: 40px;
+    }
+
+    .update__button {
+        bottom: -20%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .system-header {
+        height: 100px;
+        padding-bottom: 20px;
+    }
+
+    .update {
+        flex-direction: column;
+        padding-top: 0;
+    }
+    .before,
+    .after {
+        width: 90%;
+    }
+
+    .icon__image {
+        transform: rotate(90deg);
+    }
 }
