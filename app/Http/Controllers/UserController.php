@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Models\User;
@@ -25,7 +26,10 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        return view('thanks');
+
+        event(new Registered($user));
+
+        return view('prethanks');
     }
 
     public function mypageView()
