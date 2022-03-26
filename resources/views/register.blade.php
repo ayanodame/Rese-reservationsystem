@@ -1,6 +1,6 @@
 <!-- 会員登録ページ　authファイルの中のregisterを参考にする -->
 @extends('layouts.default')
-@section('title','Rese 会員登録')
+@section('title','Rese 仮会員登録')
 
 @section('css')
 @if(app('env')=='local')
@@ -54,7 +54,7 @@
           </div>
         </div>
         <div class="box__content__button">
-          <input type="submit" class="form__button" value="登録">
+          <input type="submit" class="form__button" value="仮会員登録">
         </div>
       </form>
     </div>
