@@ -17,9 +17,16 @@
 }
 
 .box__message {
-    padding: 80px 20px 40px 20px;
+    padding: 80px 20px 40px 10px;
     font-weight: 530;
     font-size: 20px;
+}
+
+.box__message__detail {
+    padding: 0px 20px 10px 20px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
 }
 
 .box__button {
