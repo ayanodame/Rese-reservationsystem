@@ -41,7 +41,7 @@
           <li class="user-menu"><a href="/mypage" class="menu__link">Mypage</a></li>
           @else
           <li class="guest-menu"><a href="/" class="menu__link">Home</a></li>
-          <li class="guest-menu"><a href="/register" class="menu__link">Registration</a></li>
+          <li class="guest-menu"><a href="/user/register" class="menu__link">Registration</a></li>
           <li class="guest-menu"><a href="/login" class="menu__link">Login</a></li>
           @endif
         </ul>
