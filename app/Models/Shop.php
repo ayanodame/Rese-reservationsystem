@@ -35,6 +35,9 @@ class Shop extends Model
     {
         return $this->hasMany('App\Models\Like');
     }
+    public function owner(){
+        return $this->hasOne(('App\Models\Owner'));
+    }
 
     public static function searchShop($areaId, $genreId, $keywords)
     {
