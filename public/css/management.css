@@ -1,3 +1,141 @@
-.register {
-    padding-left: 50px;
+.search {
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 70px;
+}
+
+.search__title__name {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.search__form {
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    border-top: solid 8px blue;
+}
+
+.search__list {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.search__shop,
+.search__owner,
+.search__email {
+    display: flex;
+    padding-right: 30px;
+}
+
+.search__shop__title,
+.search__owner__title,
+.search__email__title {
+    padding-right: 15px;
+    padding-top: 8px;
+}
+
+.form__shop,
+.form__owner,
+.form__email {
+    height: 30px;
+}
+
+.form__shop {
+    width: 150px;
+    cursor: pointer;
+}
+
+.form__owner,
+.form__email {
+    width: 250px;
+}
+
+.list {
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.list__title__name {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.list__contents {
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    border-top: solid 8px blue;
+}
+
+.owners {
+    display: block;
+    display: flex;
+    justify-content: center;
+}
+
+.message {
+    padding-bottom: 10px;
+}
+
+.message__none {
+    color: red;
+    font-size: 13px;
+}
+
+.owners__title {
+    background-color: lightgray;
+}
+
+.owners__title__name,
+.owners__title__shop,
+.owners__title__email {
+    width: 380px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid 1px gray;
+    font-weight: 530;
+}
+
+.owners__list {
+    display: block;
+}
+
+.owners__list__name,
+.owners__list__shop,
+.owners__list__email {
+    width: 380px;
+    text-align: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border: solid 1px gray;
+    border-top: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: right;
+}
+
+.page-item {
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.button {
+    margin: 50px 500px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: blue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button__register {
+    color: white;
+    text-decoration: none;
 }
