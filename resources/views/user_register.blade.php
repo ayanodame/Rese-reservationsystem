@@ -4,9 +4,9 @@
 
 @section('css')
 @if(app('env')=='local')
-<link rel="stylesheet" href="{{ asset('css/register.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user_register.css') }}">
 @endif
-<link rel="stylesheet" href="{{ secure_asset('css/register.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/user_register.css') }}">
 @endsection
 
 
@@ -18,7 +18,7 @@
       <p class="box__title__name">Registration</p>
     </div>
     <div class="box__content">
-      <form action="/register" method="post">
+      <form action="/user/register" method="post">
         @csrf
         <div class="box__content__form">
           <div class="form__error">
@@ -27,7 +27,7 @@
             @endif
           </div>
           <div class="form__text">
-            <img class="form__text__image" src="icon/人物アイコン.svg" alt="人物アイコン">
+            <img class="form__text__image" src="../icon/人物アイコン.svg" alt="人物アイコン">
             <input type="text" class="form__text__name" name="name" placeholder="Username" value="{{ old('name') }}">
           </div>
         </div>
@@ -38,7 +38,7 @@
             @endif
           </div>
           <div class="form__text">
-            <img class="form__text__image" src="icon/メールの無料アイコン.svg" alt="メールアイコン">
+            <img class="form__text__image" src="../icon/メールの無料アイコン.svg" alt="メールアイコン">
             <input type="text" class="form__text__email" name="email" placeholder="Email" value="{{ old('email') }}">
           </div>
         </div>
@@ -49,7 +49,7 @@
             @endif
           </div>
           <div class="form__text">
-            <img class="form__text__image" src="icon/カギアイコン.svg" alt="カギアイコン">
+            <img class="form__text__image" src="../icon/カギアイコン.svg" alt="カギアイコン">
             <input type="text" class="form__text__password" name="password" placeholder="Password" value="{{ old('password') }}">
           </div>
         </div>

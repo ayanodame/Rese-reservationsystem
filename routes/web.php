@@ -7,6 +7,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
@@ -24,9 +25,9 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 Route::get('/', [ShopController::class, 'index'])->name('verification.notice');
 Route::get('/like', [LikeController::class, 'like']);
 Route::get('/unlike', [LikeController::class, 'unlike']);
-Route::get('/register', [UserController::class, 'registerView'])->middleware('guest');
-Route::post('/register', [UserController::class, 'register']);
-Route::get('/thanks',[UserController::class,'thanksView'])->name('verification.verify');
+Route::get('/user/register', [UserController::class, 'registerView'])->middleware('guest');
+Route::post('/user/register', [UserController::class, 'register']);
+Route::get('/thanks', [UserController::class, 'thanksView'])->name('verification.verify');
 Route::get('/mypage', [UserController::class, 'mypageView'])->middleware('verified');
 Route::get('/login', [UserController::class, 'loginView'])->middleware('guest')->name('login');
 Route::post('/login', [UserController::class, 'login']);
@@ -37,6 +38,9 @@ Route::get('delete', [ReservationController::class, 'delete']);
 Route::get('/update/{reservation}', [ReservationController::class, 'updateView']);
 Route::post('/update', [ReservationController::class, 'update']);
 
+Route::get('/manage', [OwnerController::class, 'managementView']);
+Route::post('/owner/register', [OwnerController::class, 'register']);
+Route::get('/owner/register', [OwnerController::class, 'registerView']);
 
 //未承認の方がアクセスしようとした時に表示されるルート
 Route::get('/email/verify', function () {
