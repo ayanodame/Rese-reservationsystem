@@ -18,7 +18,7 @@
       <p class="box__title__name">Registration</p>
     </div>
     <div class="box__content">
-      <form action="/register" method="post">
+      <form action="/user/register" method="post">
         @csrf
         <div class="box__content__form">
           <div class="form__error">
