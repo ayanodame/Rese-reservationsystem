@@ -33,7 +33,7 @@ class Owner extends Model
         if (isset($keywords)) {
             $query = $query->where('name', 'LIKE', "%{$keywords}%");
         }
-        $items = $query->orderBy('shop_id')->get();
+        $items = $query->orderBy('shop_id')->paginate(5);
         return $items;
     }
 
