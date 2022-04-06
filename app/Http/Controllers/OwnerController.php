@@ -23,7 +23,7 @@ class OwnerController extends Controller
     public function registerView()
     {
         $shops = Shop::all();
-        return view('owner_register', ['shops' => $shops]);
+        return view('owner.register', ['shops' => $shops]);
     }
 
     public function register(OwnerRegisterRequest $request)
