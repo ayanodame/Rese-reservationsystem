@@ -16,7 +16,7 @@ class UserController extends Controller
 {
     public function registerView(Request $request)
     {
-        return view('user_register');
+        return view('user.register');
     }
 
     public function register(UserRegisterRequest $request)
@@ -48,7 +48,7 @@ class UserController extends Controller
     public function loginView(Request $request)
     {
         $errorMessage = ['errorMessage' => ''];
-        return view('login', $errorMessage);
+        return view('user.login', $errorMessage);
     }
 
     public function login(LoginRequest $request)
