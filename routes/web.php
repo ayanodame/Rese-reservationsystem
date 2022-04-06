@@ -29,8 +29,8 @@ Route::get('/user/register', [UserController::class, 'registerView'])->middlewar
 Route::post('/user/register', [UserController::class, 'register']);
 Route::get('/thanks', [UserController::class, 'thanksView'])->name('verification.verify');
 Route::get('/mypage', [UserController::class, 'mypageView'])->middleware('verified');
-Route::get('/login', [UserController::class, 'loginView'])->middleware('guest')->name('login');
-Route::post('/login', [UserController::class, 'login']);
+Route::get('/user/login', [UserController::class, 'loginView'])->middleware('guest')->name('login');
+Route::post('/user/login', [UserController::class, 'login']);
 Route::get('/detail/{shop}', [ShopController::class, 'detaillView']);
 Route::post('/reserve', [ReservationController::class, 'register']);
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
