@@ -1,0 +1,56 @@
+.thanks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.box {
+    width: 380px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 3px 2px 3px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box__message {
+    padding: 80px 20px 40px 10px;
+    font-weight: 530;
+    font-size: 20px;
+}
+
+.box__message__detail {
+    padding: 0px 20px 10px 20px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.box__button {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.box__button__mail {
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .system-header {
+        height: 150px;
+    }
+    .register {
+        padding-top: 0px;
+    }
+    .box {
+        width: 350px;
+    }
+}
