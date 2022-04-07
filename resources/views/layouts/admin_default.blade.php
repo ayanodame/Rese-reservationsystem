@@ -8,18 +8,18 @@
   <title>@yield('title')</title>
   @if(app('env')=='local')
   <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/manage_default.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/admin_default.css') }}">
   @endif
   <link rel="stylesheet" href="{{ secure_asset('css/reset.css') }}">
-  <link rel="stylesheet" href="{{ secure_asset('css/manage_default.css') }}">
+  <link rel="stylesheet" href="{{ secure_asset('css/admin_default.css') }}">
   @yield('css')
 </head>
 
 <body>
   <header class="system-header">
-      <div class="menu-title">
-        <a href="/manage" class="menu-title__name">Rese管理画面</a>
-      </div>
+    <div class="menu-title">
+      <a href="/manage" class="menu-title__name">Rese管理画面</a>
+    </div>
   </header>
 
   @yield('main')
