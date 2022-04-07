@@ -17,6 +17,10 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
+    'owner' => [
+        'guard' =>'owners',
+        'passwords' =>'owner',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -40,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'owner' =>[
+            'driver' =>'session',
+            'provider' =>'owners',
+        ]
     ],
 
     /*
@@ -63,6 +71,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'owners' =>[
+            'driver' =>'eloquent',
+            'model' => App\Models\Owner::class,
         ],
 
         // 'users' => [
@@ -92,6 +104,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
+        ],
+        'owners' =>[
+            'provider' =>'owners',
+            'table' =>'password_resets',
+            'expire' =>60,
+            'throttle' =>60,
         ],
     ],
 

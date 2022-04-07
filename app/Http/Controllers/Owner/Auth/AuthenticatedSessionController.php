@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect("/owner/mypage");
+        return view("owner.mypage");
     }
 
     /**
