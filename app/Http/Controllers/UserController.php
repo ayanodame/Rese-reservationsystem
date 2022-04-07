@@ -42,7 +42,7 @@ class UserController extends Controller
             'likes' => $likes,
             'user' => $user,
         ];
-        return view('mypage', $data);
+        return view('user.mypage', $data);
     }
 
     public function loginView(Request $request)
@@ -59,7 +59,7 @@ class UserController extends Controller
             'email' => $email,
             'password' => $password
         ])) {
-            return redirect('mypage');
+            return redirect('user.mypage');
         } else {
             $errorMessage = 'ログインに失敗しました。';
         }
