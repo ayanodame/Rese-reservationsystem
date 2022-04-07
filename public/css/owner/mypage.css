@@ -1,0 +1,135 @@
+.owner {
+    padding-left: 80px;
+    padding-bottom: 50px;
+}
+
+.owner__name {
+    padding-bottom: 20px;
+}
+
+.owner__name__message {
+    font-size: 20px;
+}
+
+.shop {
+    display: flex;
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    width: 90%;
+}
+
+.shop__image {
+    width: 50%;
+    padding-right: 20px;
+}
+
+.shop__content__title {
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.shop__content__title-name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.shop__content__tag {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.shop__content__tag-area,
+.shop__content__tag-genre {
+    padding-right: 20px;
+}
+
+.shop__content__summary-detail {
+    line-height: 25px;
+}
+
+.shop__button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: blue;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.shop__button__update {
+    color: white;
+    text-decoration: none;
+}
+
+.reservation {
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.reservation__title__name {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.reservation__contents {
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    border-top: solid 8px blue;
+}
+
+.lists {
+    display: flex;
+    justify-content: center;
+}
+
+.message {
+    padding-bottom: 10px;
+}
+
+.message__none {
+    color: red;
+    font-size: 13px;
+}
+
+.lists__title {
+    background-color: lightgray;
+}
+
+.lists__title__name,
+.lists__title__email,
+.lists__title__date,
+.lists__title__time,
+.lists__title__people {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid 1px gray;
+    font-weight: 530;
+    width: 200px;
+}
+
+.lists__detail__name,
+.lists__detail__email,
+.lists__detail__date,
+.lists__detail__time,
+.lists__detail__people {
+    text-align: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border: solid 1px gray;
+    border-top: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: right;
+}
+
+.page-item {
+    padding-right: 10px;
+    padding-top: 10px;
+}
