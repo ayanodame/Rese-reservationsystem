@@ -1,6 +1,6 @@
 @extends('layouts.manage_default')
 
-@section('Rese管理画面')
+@section('Rese　店舗管理担当者登録')
 
 @section('css')
 @if(app('env')=='local')
