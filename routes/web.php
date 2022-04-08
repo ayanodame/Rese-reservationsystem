@@ -42,10 +42,13 @@ Route::post('/update', [ReservationController::class, 'update']);
 
 //管理側のルート
 Route::get('/admin', [AdminController::class, 'adminView']);
-Route::post('/owner/register', [OwnerController::class, 'register']);
-Route::get('/area/register',[AdminController::class,'areaView']);
-Route::post('/area/register',[AdminController::class,'areaRegister']);
 Route::get('/owner/register', [OwnerController::class, 'registerView']);
+Route::post('/owner/register', [OwnerController::class, 'register']);
+Route::get('/area/register', [AdminController::class, 'areaView']);
+Route::post('/area/register', [AdminController::class, 'areaRegister']);
+Route::get('/genre/register', [AdminController::class, 'genreView']);
+Route::post('/genre/register', [AdminController::class, 'genreRegister']);
+
 Route::get('/owner/mypage/{owner}', [OwnerController::class, 'mypageView']);
 
 //未承認の方がアクセスしようとした時に表示されるルート
