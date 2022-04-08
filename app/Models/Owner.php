@@ -32,4 +32,26 @@ class Owner extends Authenticatable
     {
         return $this->hasOne('App\Models\Shop');
     }
+
+    public static function searchOwner($shopId, $email, $keywords)
+    {
+
+        $query = Owner::query();
+        //店名が選択されている場合
+        if (isset($shopId)) {
+            $query = $query->whereHas('shop', function ($query) use ($shopId) {
+                $query->where('id', $shopId);
+            });
+        }
+        //メールアドレスが入力されている場合
+        if (isset($email)) {
+            $query = $query->where('email', $email);
+        }
+        //キーワードが入力されている場合
+        if (isset($keywords)) {
+            $query = $query->where('name', 'LIKE', "%{$keywords}%");
+        }
+        $items = $query->Paginate(5);
+        return $items;
+    }
 }
