@@ -1,4 +1,4 @@
-@extends('layouts.manage_default')
+@extends('layouts.admin_default')
 
 @section('Rese　店舗管理担当者登録')
 
@@ -38,21 +38,6 @@
           <div class="form__text">
             <img class="form__text__image" src="../icon/メールの無料アイコン.svg" alt="メールアイコン">
             <input type="text" class="form__text__email" name="email" placeholder="Email" value="{{ old('email') }}">
-          </div>
-        </div>
-        <div class="box__content__form">
-          <div class="form__error">
-            @if($errors->has('shop_id'))
-            <p class="error-message">{{$errors->first('shop_id')}}</p>
-            @endif
-          </div>
-          <div class="form__text">
-            <img class="form__text__image" src="../icon/ショップアイコン4.svg" alt="お店アイコン">
-            <select name="shop_id" class="register__shop__content-form">
-              @foreach($shops as $shop)
-              <option value="{{$shop->id}}">{{$shop->name}}</option>
-              @endforeach
-            </select>
           </div>
         </div>
         <div class="box__content__form">
