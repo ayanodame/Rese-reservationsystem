@@ -1,6 +1,6 @@
 @extends('layouts.admin_default')
 
-@section('Rese エリア名登録')
+@section('Rese エリア登録')
 
 @section('css')
 @if(app('env')=='local')
