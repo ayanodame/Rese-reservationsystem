@@ -53,6 +53,19 @@
     width: 250px;
 }
 
+.search__submit {
+    padding-right: 20px;
+}
+
+.search__submit__button {
+    padding: 8px 20px;
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
 .list {
     padding-left: 80px;
     padding-right: 80px;
@@ -71,7 +84,9 @@
     border-top: solid 8px blue;
 }
 
-.owners {
+.owners,
+.areas,
+.genres {
     display: block;
     display: flex;
     justify-content: center;
@@ -86,13 +101,17 @@
     font-size: 13px;
 }
 
-.owners__title {
+.owners__title,
+.areas__title,
+.genres__title {
     background-color: lightgray;
 }
 
 .owners__title__name,
 .owners__title__shop,
-.owners__title__email {
+.owners__title__email,
+.areas__title__name,
+.genres__title__name {
     width: 380px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -100,13 +119,17 @@
     font-weight: 530;
 }
 
-.owners__list {
+.owners__list,
+.areas__list,
+.genres__list {
     display: block;
 }
 
 .owners__list__name,
 .owners__list__shop,
-.owners__list__email {
+.owners__list__email,
+.areas__list__name,
+.genres__list__name {
     width: 380px;
     text-align: center;
     padding-top: 13px;
