@@ -14,6 +14,7 @@
   <div class="owner__name">
     <h2 class="owner__name__message">お疲れ様です。{{$item->name}}さん</h2>
   </div>
+  @isset($item->shop)
   <div class="shop">
     <img src="{{$item->shop->image_url}}" alt="{{$item->shop->name}}" class="shop__image">
     <div class="shop__content">
@@ -32,6 +33,11 @@
       </div>
     </div>
   </div>
+  @else
+  <div class="register__button">
+    <a href="/shop/register" class="register__button__info">店舗情報登録</a>
+  </div>
+  @endisset
 </main>
 
 <main class="reservation">
