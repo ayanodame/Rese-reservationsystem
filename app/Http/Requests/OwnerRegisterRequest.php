@@ -27,7 +27,6 @@ class OwnerRegisterRequest extends FormRequest
             'name' => 'required|string|max:100',
             'email' => 'required|email|unique:App\Models\Owner,email|max:50',
             'password' => 'required|min:8|max:50',
-            'shop_id' => 'required|integer|unique:App\Models\Owner,shop_id'
         ];
     }
     public function messages()
@@ -40,7 +39,6 @@ class OwnerRegisterRequest extends FormRequest
             "name.max" => "100文字以内で入力してください。",
             "password.max" => "50文字以内で入力してください。",
             "password.min" => "8文字以上で入力してください。",
-            "shop_id.unique" => "登録済みです。"
         ];
     }
 }
