@@ -57,7 +57,20 @@
     border-radius: 5px;
 }
 
+.register__button {
+    background-color: blue;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100px;
+    cursor: pointer;
+}
+
 .shop__button__update {
+    color: white;
+    text-decoration: none;
+}
+
+.register__button__info {
     color: white;
     text-decoration: none;
 }
