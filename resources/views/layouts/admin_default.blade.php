@@ -18,7 +18,7 @@
 <body>
   <header class="system-header">
     <div class="menu-title">
-      <a href="/manage" class="menu-title__name">Rese管理画面</a>
+      <a href="/admin" class="menu-title__name">Rese管理画面</a>
     </div>
   </header>
 
