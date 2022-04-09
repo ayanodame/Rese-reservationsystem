@@ -7,6 +7,8 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\AreaController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SessionController;
@@ -44,12 +46,15 @@ Route::post('/update', [ReservationController::class, 'update']);
 Route::get('/admin', [AdminController::class, 'adminView']);
 Route::get('/owner/register', [OwnerController::class, 'registerView']);
 Route::post('/owner/register', [OwnerController::class, 'register']);
-Route::get('/area/register', [AdminController::class, 'areaView']);
-Route::post('/area/register', [AdminController::class, 'areaRegister']);
-Route::get('/genre/register', [AdminController::class, 'genreView']);
-Route::post('/genre/register', [AdminController::class, 'genreRegister']);
+Route::get('/area/register', [AreaController::class, 'registerView']);
+Route::post('/area/register', [AreaController::class, 'register']);
+Route::get('/genre/register', [GenreController::class, 'registerView']);
+Route::post('/genre/register', [GenreController::class, 'register']);
 
+//店舗側ルート
 Route::get('/owner/mypage/{owner}', [OwnerController::class, 'mypageView']);
+Route::get('/shop/register/{owner}', [ShopController::class, 'registerView']);
+Route::post('/shop/register', [ShopController::class, 'register']);
 
 //未承認の方がアクセスしようとした時に表示されるルート
 Route::get('/email/verify', function () {
