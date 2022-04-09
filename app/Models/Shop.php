@@ -14,11 +14,13 @@ class Shop extends Model
         'name',
         'area_id',
         'genre_id',
+        'owner_id',
         'summary',
         'open_time',
         'close_time',
         'image_url',
     ];
+    
     public function area()
     {
         return $this->belongsTo('App\Models\Area');
