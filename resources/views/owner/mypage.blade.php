@@ -35,7 +35,7 @@
   </div>
   @else
   <div class="register__button">
-    <a href="/shop/register" class="register__button__info">店舗情報登録</a>
+    <a href="/shop/register/{{$item->id}}" class="register__button__info">店舗情報登録</a>
   </div>
   @endisset
 </main>
