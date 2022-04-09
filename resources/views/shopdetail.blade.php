@@ -37,7 +37,7 @@
       //$calcTime＝30分ずつ足していく。
       if ($calcTime >= $lastOrderTime) {  //calcTimeがlastOrderTimeより大きい場合は下記を実行して繰り返しを終了。
         array_push($reservedTimeList, $lastOrderTime);
-        //reservedTimeListの配列にendTimeの時間を追加。
+        //reservedTimeListの配列にlastOrderTimeの時間を追加。
         break;
       }
 
