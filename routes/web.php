@@ -55,6 +55,8 @@ Route::post('/genre/register', [GenreController::class, 'register']);
 Route::get('/owner/mypage/{owner}', [OwnerController::class, 'mypageView']);
 Route::get('/shop/register/{owner}', [ShopController::class, 'registerView']);
 Route::post('/shop/register', [ShopController::class, 'register']);
+Route::get('/shop/update/{shop}', [ShopController::class, 'updateView']);
+Route::post('/shop/update', [ShopController::class, 'update']);
 
 //未承認の方がアクセスしようとした時に表示されるルート
 Route::get('/email/verify', function () {

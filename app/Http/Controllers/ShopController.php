@@ -59,4 +59,23 @@ class ShopController extends Controller
         ]);
         return view('owner.mypage');
     }
+    public function updateView(Shop $shop)
+    {
+        $areas = Area::all();
+        $genres = Genre::all();
+        $data = [
+            'item' => $shop,
+            'areas' => $areas,
+            'genres' => $genres,
+        ];
+        return view('shop_update', $data);
+    }
+
+    public function update(ShopRegisterRequest $request)
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        Shop::where('id', $request->id)->update($form);
+        return redirect('/owner/mypage');
+    }
 }
