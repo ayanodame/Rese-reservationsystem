@@ -29,8 +29,8 @@ class ShopRegisterRequest extends FormRequest
             'genre_id' => 'required',
             'owner_id' => 'required',
             'summary' => 'required|string|max:191',
-            'open_time' => 'required',
-            'close_time ' => 'required',
+            'open_time' => 'required|date_format:H:i',
+            'close_time ' => 'required|date_format:H:i',
             'image_url' => 'required|max:255',
         ];
     }
@@ -41,6 +41,7 @@ class ShopRegisterRequest extends FormRequest
             "name.max" => "※50文字以内で入力してください。",
             "summary.max" => "※191文字以内で入力してください。",
             "image_url.max" => "※255文字以内で入力してください。",
+            "date_format:H:i" => "※「H:i」形式で入力してください。"
         ];
     }
 }
