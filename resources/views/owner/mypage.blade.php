@@ -29,7 +29,7 @@
         <p class="shop__content__summary-detail">{{$item->shop->summary}}</p>
       </div>
       <div class="shop__button">
-        <a href="/shop/update" class="shop__button__update">店舗情報更新</a>
+        <a href="/shop/update/{{$item->shop->id}}" class="shop__button__update">店舗情報更新</a>
       </div>
     </div>
   </div>
