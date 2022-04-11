@@ -19,7 +19,7 @@
       <div class="box__content__message">
         <p class="message__login-error">{{$errorMessage}}</p>
       </div>
-      <form action="/login" method="post">
+      <form action="/user/login" method="post">
         @csrf
         <div class="box__content__form">
           <div class="form__error">
@@ -28,7 +28,7 @@
             @endif
           </div>
           <div class="form__text">
-            <img class="form__text__image" src="icon/メールの無料アイコン.svg" alt="メールアイコン">
+            <img class="form__text__image" src="../icon/メールの無料アイコン.svg" alt="メールアイコン">
             <input type="text" class="form__text__email" name="email" placeholder="Email" value="{{ old('email') }}">
           </div>
         </div>
@@ -39,7 +39,7 @@
             @endif
           </div>
           <div class="form__text">
-            <img class="form__text__image" src="icon/カギアイコン.svg" alt="カギアイコン">
+            <img class="form__text__image" src="../icon/カギアイコン.svg" alt="カギアイコン">
             <input type="password" class="form__text__password" name="password" placeholder="Password" value="{{ old('password') }}">
           </div>
         </div>

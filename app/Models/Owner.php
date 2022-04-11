@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-class Owner extends Model
+class Owner extends Authenticatable
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
         'name',
@@ -17,13 +20,28 @@ class Owner extends Model
         'reservation_id',
     ];
 
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    protected $casts = [
+        'email_varified_at' => 'datetime',
+    ];
+
+    public function shop()
+    {
+        return $this->hasOne('App\Models\Shop');
+    }
+
     public static function searchOwner($shopId, $email, $keywords)
     {
 
         $query = Owner::query();
-        //店舗が選択されている場合
+        //店名が選択されている場合
         if (isset($shopId)) {
-            $query = $query->where('shop_id', $shopId);
+            $query = $query->whereHas('shop', function ($query) use ($shopId) {
+                $query->where('id', $shopId);
+            });
         }
         //メールアドレスが入力されている場合
         if (isset($email)) {
@@ -33,12 +51,7 @@ class Owner extends Model
         if (isset($keywords)) {
             $query = $query->where('name', 'LIKE', "%{$keywords}%");
         }
-        $items = $query->orderBy('shop_id')->paginate(5);
+        $items = $query->Paginate(5);
         return $items;
-    }
-
-    public function shop()
-    {
-        return $this->belongsTo('App\Models\Shop');
     }
 }

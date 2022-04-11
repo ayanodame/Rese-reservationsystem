@@ -1,4 +1,3 @@
-<!-- サンクスページ表示 -->
 @extends('layouts.default')
 @section('title','Rese 仮会員登録完了')
 

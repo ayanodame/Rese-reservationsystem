@@ -1,22 +1,21 @@
-@extends('layouts.manage_default')
+@extends('layouts.admin_default')
 
 @section('Rese管理画面')
 
 @section('css')
 @if(app('env')=='local')
-<link rel="stylesheet" href="{{ asset('css/management.css') }}">
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 @endif
-<link rel="stylesheet" href="{{ secure_asset('css/management.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/admin.css') }}">
 @endsection
 
 @section('main')
-
 <main class="search">
   <div class="search__title">
     <h2 class="search__title__name">検索</h2>
   </div>
   <div class="search__form">
-    <form action="/manage" method="get">
+    <form action="/admin" method="get">
       @csrf
       <div class="search__list">
         <div class="search__shop">
@@ -48,42 +47,82 @@
             <input type="text" class="form__email" name="input_email" value="{{$email}}">
           </div>
         </div>
+        <div class="search__submit">
+          <input type="submit" value="検索" class="search__submit__button">
+        </div>
       </div>
     </form>
   </div>
 </main>
-
 <main class="list">
   <div class="list__title">
-    <h2 class="list__title__name">店舗管理一覧</h2>
+    <h2 class="list__title__name">店舗管理者一覧</h2>
   </div>
   <div class="list__contents">
-    @if($owners->count())
-    @else
-    <div class="message">
-      <p class="message__none">検索結果がありませんでした。条件を変えて再検索してください。</p>
-    </div>
-    @endif
     <table class="owners">
       <tr class="owners__title">
         <th class="owners__title__name">店舗代表者名</th>
         <th class="owners__title__shop">担当店舗名</th>
         <th class="owners__title__email">メールアドレス</th>
       </tr>
-      @foreach($owners as $owner)
+      @foreach($items as $item)
       <tr class="owners__list">
-        <td class="owners__list__name">{{$owner->name}}</td>
-        <td class="owners__list__shop">{{$owner->shop->name}}</td>
-        <td class="owners__list__email">{{$owner->email}}</td>
+        <td class="owners__list__name">{{$item->name}}</td>
+        <td class="owners__list__shop">{{$item->shop->name??'-'}}</td>
+        <td class="owners__list__email">{{$item->email}}</td>
       </tr>
       @endforeach
     </table>
   </div>
 
-  {{$owners->links()}}
+  {{ $items->links() }}
 
 </main>
 <div class="button">
   <a href="/owner/register" class="button__register">店舗担当者登録</a>
 </div>
+
+<main class="list">
+  <div class="list__title">
+    <h2 class="list__title__name">エリア管理一覧</h2>
+  </div>
+  <div class="list__contents">
+    <table class="areas">
+      <tr class="areas__title">
+        <th class="areas__title__name">エリア名</th>
+      </tr>
+      @foreach($areas as $area)
+      <tr class="areas__list">
+        <td class="areas__list__name">{{$area->name}}</td>
+      </tr>
+      @endforeach
+    </table>
+  </div>
+</main>
+<div class="button">
+  <a href="/area/register" class="button__register">エリア登録</a>
+</div>
+
+<main class="list">
+  <div class="list__title">
+    <h2 class="list__title__name">ジャンル管理一覧</h2>
+  </div>
+  <div class="list__contents">
+    <table class="genres">
+      <tr class="genres__title">
+        <th class="genres__title__name">エリア名</th>
+      </tr>
+      @foreach($genres as $genre)
+      <tr class="genres__list">
+        <td class="genres__list__name">{{$genre->name}}</td>
+      </tr>
+      @endforeach
+    </table>
+  </div>
+</main>
+
+<div class="button">
+  <a href="/genre/register" class="button__register">ジャンル登録</a>
+</div>
+
 @endsection
