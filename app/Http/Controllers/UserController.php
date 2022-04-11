@@ -16,7 +16,7 @@ class UserController extends Controller
 {
     public function registerView(Request $request)
     {
-        return view('user_register');
+        return view('user.register');
     }
 
     public function register(UserRegisterRequest $request)
@@ -42,13 +42,13 @@ class UserController extends Controller
             'likes' => $likes,
             'user' => $user,
         ];
-        return view('mypage', $data);
+        return view('user.mypage', $data);
     }
 
     public function loginView(Request $request)
     {
         $errorMessage = ['errorMessage' => ''];
-        return view('login', $errorMessage);
+        return view('user.login', $errorMessage);
     }
 
     public function login(LoginRequest $request)
@@ -59,7 +59,7 @@ class UserController extends Controller
             'email' => $email,
             'password' => $password
         ])) {
-            return redirect('mypage');
+            return redirect('user.mypage');
         } else {
             $errorMessage = 'ログインに失敗しました。';
         }

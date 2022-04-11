@@ -7,7 +7,10 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\AreaController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
@@ -22,15 +25,16 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 |
 */
 
+//ユーザー側のルート
 Route::get('/', [ShopController::class, 'index'])->name('verification.notice');
 Route::get('/like', [LikeController::class, 'like']);
 Route::get('/unlike', [LikeController::class, 'unlike']);
 Route::get('/user/register', [UserController::class, 'registerView'])->middleware('guest');
 Route::post('/user/register', [UserController::class, 'register']);
 Route::get('/thanks', [UserController::class, 'thanksView'])->name('verification.verify');
-Route::get('/mypage', [UserController::class, 'mypageView'])->middleware('verified');
-Route::get('/login', [UserController::class, 'loginView'])->middleware('guest')->name('login');
-Route::post('/login', [UserController::class, 'login']);
+Route::get('/user/mypage', [UserController::class, 'mypageView'])->middleware('verified');
+Route::get('/user/login', [UserController::class, 'loginView'])->middleware('guest')->name('login');
+Route::post('/user/login', [UserController::class, 'login']);
 Route::get('/detail/{shop}', [ShopController::class, 'detaillView']);
 Route::post('/reserve', [ReservationController::class, 'register']);
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
@@ -38,9 +42,21 @@ Route::get('delete', [ReservationController::class, 'delete']);
 Route::get('/update/{reservation}', [ReservationController::class, 'updateView']);
 Route::post('/update', [ReservationController::class, 'update']);
 
-Route::get('/manage', [OwnerController::class, 'managementView']);
-Route::post('/owner/register', [OwnerController::class, 'register']);
+//管理側のルート
+Route::get('/admin', [AdminController::class, 'adminView']);
 Route::get('/owner/register', [OwnerController::class, 'registerView']);
+Route::post('/owner/register', [OwnerController::class, 'register']);
+Route::get('/area/register', [AreaController::class, 'registerView']);
+Route::post('/area/register', [AreaController::class, 'register']);
+Route::get('/genre/register', [GenreController::class, 'registerView']);
+Route::post('/genre/register', [GenreController::class, 'register']);
+
+//店舗側ルート
+Route::get('/owner/mypage/{owner}', [OwnerController::class, 'mypageView']);
+Route::get('/shop/register/{owner}', [ShopController::class, 'registerView']);
+Route::post('/shop/register', [ShopController::class, 'register']);
+Route::get('/shop/update/{shop}', [ShopController::class, 'updateView']);
+Route::post('/shop/update', [ShopController::class, 'update']);
 
 //未承認の方がアクセスしようとした時に表示されるルート
 Route::get('/email/verify', function () {

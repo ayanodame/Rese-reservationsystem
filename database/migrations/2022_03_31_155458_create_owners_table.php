@@ -18,7 +18,6 @@ class CreateOwnersTable extends Migration
             $table->string('name', 100);
             $table->string('email', 50)->unique();
             $table->string('password', 100);
-            $table->unsignedBigInteger('shop_id')->unique();
             $table->unsignedBigInteger('reservation_id')->nullable();
             $table->rememberToken();
             $table->timestamp('created_at')->useCurrent();

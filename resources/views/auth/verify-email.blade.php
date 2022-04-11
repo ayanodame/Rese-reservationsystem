@@ -1,39 +1,28 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.default')
+@section('title','Rese メール認証を完了してください')
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
-        </div>
+@section('css')
+@if(app('env')=='local')
+<link rel="stylesheet" href="{{ asset('css/verify-email.css') }}">
+@endif
+<link rel="stylesheet" href="{{ secure_asset('css/verify-email.css') }}">
+@endsection
 
-        @if (session('status') == 'verification-link-sent')
-        <div class="mb-4 font-medium text-sm text-green-600">
-            {{ __('A new verification link has been sent to the email address you provided during registration.') }}
-        </div>
-        @endif
 
-        <div class="mt-4 flex items-center justify-between">
+@section('main')
+<main class="thanks">
+    <div class="box">
+        <p class="box__message">会員登録ありがとうございます。</p>
+        <p class="box__message__detail">本登録用のメールは届きましたか？<br>届いていないようでしたら、下記ボタンをクリックして、<br>再度メールをご確認ください。</p>
+        <div class="box__button">
             <form method="POST" action="{{ route('verification.send') }}">
                 @csrf
-
-                <div>
-                    <x-button>
-                        {{ __('Resend Verification Email') }}
-                    </x-button>
-                </div>
-            </form>
-
-            <form method="POST" action="/logout">
-                @csrf
-
-                <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    {{ __('Log Out') }}
-                </button>
+                <x-button class="box__button__mail">
+                    {{ __('認証メール再送付') }}
+                </x-button>
             </form>
         </div>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+</main>
+
+@endsection
