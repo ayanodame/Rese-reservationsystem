@@ -47,7 +47,7 @@ class ShopController extends Controller
 
     public function register(ShopRegisterRequest $request)
     {
-        Shop::create([
+        $shop=Shop::create([
             'name' => $request->name,
             'area_id' => $request->area_id,
             'genre_id' => $request->genre_id,
@@ -57,7 +57,8 @@ class ShopController extends Controller
             'close_time' => $request->close_time,
             'image_url' => $request->image_url,
         ]);
-        return view('owner.mypage');
+        unset($shop['_token']);
+        return redirect('/owner/mypage/{owner}');
     }
     public function updateView(Shop $shop)
     {
