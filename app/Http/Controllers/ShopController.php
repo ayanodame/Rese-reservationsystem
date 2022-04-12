@@ -42,12 +42,20 @@ class ShopController extends Controller
             'areas' => $areas,
             'genres' => $genres,
         ];
+<<<<<<< HEAD
         return view('owner.shop_register', $data);
+=======
+        return view('shop_register', $data);
+>>>>>>> 60ca485567edd4b08fea0625872f56056440ad47
     }
 
     public function register(ShopRegisterRequest $request)
     {
+<<<<<<< HEAD
         $shop = Shop::create([
+=======
+        $shop=Shop::create([
+>>>>>>> 60ca485567edd4b08fea0625872f56056440ad47
             'name' => $request->name,
             'area_id' => $request->area_id,
             'genre_id' => $request->genre_id,
@@ -58,7 +66,11 @@ class ShopController extends Controller
             'image_url' => $request->image_url,
         ]);
         unset($shop['_token']);
+<<<<<<< HEAD
         return back();
+=======
+        return redirect('/owner/mypage/{owner}');
+>>>>>>> 60ca485567edd4b08fea0625872f56056440ad47
     }
     public function updateView(Shop $shop)
     {
@@ -69,7 +81,11 @@ class ShopController extends Controller
             'areas' => $areas,
             'genres' => $genres,
         ];
+<<<<<<< HEAD
         return view('owner.shop_update', $data);
+=======
+        return view('shop_update', $data);
+>>>>>>> 60ca485567edd4b08fea0625872f56056440ad47
     }
 
     public function update(ShopRegisterRequest $request)
@@ -77,6 +93,10 @@ class ShopController extends Controller
         $form = $request->all();
         unset($form['_token']);
         Shop::where('id', $request->id)->update($form);
+<<<<<<< HEAD
         return back();
+=======
+        return redirect('/owner/mypage');
+>>>>>>> 60ca485567edd4b08fea0625872f56056440ad47
     }
 }
