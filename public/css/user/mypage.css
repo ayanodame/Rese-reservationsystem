@@ -72,6 +72,17 @@
     border-radius: 5px;
 }
 
+.check__evaluate {
+    position: absolute;
+    bottom: 5%;
+    right: 25%;
+    color: blue;
+    background-color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
 .check__shop__title,
 .check__date__title,
 .check__time__title,
@@ -243,6 +254,26 @@
         width: 25px;
         height: 25px;
     }
+    .check__update {
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        color: blue;
+        background-color: white;
+        padding: 10px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .check__evaluate {
+        position: absolute;
+        bottom: 5%;
+        right: 25%;
+        color: blue;
+        background-color: white;
+        padding: 10px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -306,5 +337,27 @@
     .shop-card {
         margin-right: 10px;
         width: 100%;
+    }
+    .check__update {
+        position: absolute;
+        bottom: 5%;
+        right: 3%;
+        color: blue;
+        background-color: white;
+        padding: 3px 3px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 8px;
+    }
+    .check__evaluate {
+        position: absolute;
+        bottom: 5%;
+        right: 23%;
+        color: blue;
+        background-color: white;
+        padding: 3px 3px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 8px;
     }
 }

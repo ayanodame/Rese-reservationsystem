@@ -73,6 +73,7 @@
           </tr>
         </table>
         <a href="/update/{{$reservation->id}}" class="check__update">変更</a>
+        <a href="/evaluation/register/{{$reservation->id}}" class="check__evaluate">評価</a>
       </div>
 
     </div>
