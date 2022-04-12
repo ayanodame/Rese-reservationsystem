@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ShopRegisterRequest;
+use App\Http\Requests\ShopRequest;
 use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
@@ -45,7 +45,7 @@ class ShopController extends Controller
                 return view('owner.shop_register', $data);
         }
 
-        public function register(ShopRegisterRequest $request)
+        public function register(ShopRequest $request)
         {
                 $shop = Shop::create([
                         'name' => $request->name,
@@ -72,7 +72,7 @@ class ShopController extends Controller
                 return view('owner.shop_update', $data);
         }
 
-        public function update(ShopRegisterRequest $request)
+        public function update(ShopRequest $request)
         {
                 $form = $request->all();
                 unset($form['_token']);

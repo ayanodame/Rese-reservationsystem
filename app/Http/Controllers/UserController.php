@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
-use App\Http\Requests\UserRegisterRequest;
+use App\Http\Requests\UserRequest;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Models\User;
 use App\Models\Reservation;
@@ -19,7 +19,7 @@ class UserController extends Controller
         return view('user.register');
     }
 
-    public function register(UserRegisterRequest $request)
+    public function register(UserRequest $request)
     {
         $user = User::create([
             'name' => $request->name,

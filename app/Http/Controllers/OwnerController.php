@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\OwnerRegisterRequest;
+use App\Http\Requests\OwnerRequest;
 use App\Models\Owner;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +15,7 @@ class OwnerController extends Controller
         return view('owner.register');
     }
 
-    public function register(OwnerRegisterRequest $request)
+    public function register(OwnerRequest $request)
     {
         $owner = Owner::create([
             'name' => $request->name,
