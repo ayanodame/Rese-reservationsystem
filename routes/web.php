@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\EvaluationController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\GenreController;
@@ -39,8 +40,9 @@ Route::get('/detail/{shop}', [ShopController::class, 'detaillView']);
 Route::post('/reserve', [ReservationController::class, 'register']);
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 Route::get('delete', [ReservationController::class, 'delete']);
-Route::get('/update/{reservation}', [ReservationController::class, 'updateView']);
+Route::get('/update/{reservation}', [ReservationController::class, 'updateView'])->middleware('guest');
 Route::post('/update', [ReservationController::class, 'update']);
+Route::get('/evaluation/register/{reservation}', [EvaluationController::class, 'registerView']);
 
 //管理側のルート
 Route::get('/admin', [AdminController::class, 'adminView']);
