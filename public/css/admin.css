@@ -152,13 +152,13 @@
     margin: 50px 500px;
     display: flex;
     justify-content: center;
-    padding: 10px 20px;
-    background-color: blue;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 .button__register {
     color: white;
     text-decoration: none;
+    padding: 10px 20px;
+    background-color: blue;
+    border-radius: 5px;
+    cursor: pointer;
 }

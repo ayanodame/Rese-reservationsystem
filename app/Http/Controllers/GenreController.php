@@ -7,12 +7,12 @@ use App\Models\Genre;
 
 class GenreController extends Controller
 {
-    public function genreView()
+    public function registerView()
     {
         return view('genre_register');
     }
 
-    public function genreRegister(Request $request)
+    public function register(Request $request)
     {
         $genre = Genre::create([
             'name' => $request->name,

@@ -4,9 +4,9 @@
 
 @section('css')
 @if(app('env')=='local')
-<link rel="stylesheet" href="{{ asset('css/shop_update.css') }}">
+<link rel="stylesheet" href="{{ asset('css/owner/shop_update.css') }}">
 @endif
-<link rel="stylesheet" href="{{ secure_asset('css/shop_update.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/owner/shop_update.css') }}">
 @endsection
 
 @section('main')
@@ -19,7 +19,6 @@
       <form action="/shop/update" method="post">
         @csrf
         <input type="hidden" name="owner_id" value="{{$item->owner->id}}">
-        <input type="hidden" name="shop_id" value="{{$item->id}}">
         <div class="box__content__form">
           @if($errors->has('name'))
           <div class="form__error">

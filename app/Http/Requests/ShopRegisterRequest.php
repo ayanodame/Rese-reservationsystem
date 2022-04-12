@@ -30,7 +30,7 @@ class ShopRegisterRequest extends FormRequest
             'owner_id' => 'required',
             'summary' => 'required|string|max:191',
             'open_time' => 'required|date_format:H:i',
-            'close_time ' => 'required|date_format:H:i',
+            'close_time' => 'required|date_format:H:i',
             'image_url' => 'required|max:255',
         ];
     }

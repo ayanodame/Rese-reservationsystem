@@ -29,7 +29,7 @@ class UserController extends Controller
 
         event(new Registered($user));
 
-        return view('prethanks');
+        return view('user.prethanks');
     }
 
     public function mypageView()
@@ -59,10 +59,10 @@ class UserController extends Controller
             'email' => $email,
             'password' => $password
         ])) {
-            return redirect('user.mypage');
+            return redirect('user/mypage');
         } else {
             $errorMessage = 'ログインに失敗しました。';
         }
-        return view('login', ['errorMessage' => $errorMessage]);
+        return view('user.login', ['errorMessage' => $errorMessage]);
     }
 }

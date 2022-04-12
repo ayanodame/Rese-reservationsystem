@@ -8,11 +8,11 @@ use App\Models\Area;
 
 class AreaController extends Controller
 {
-    public function areaView()
+    public function registerView()
     {
         return view('area_register');
     }
-    public function areaRegister(Request $request)
+    public function register(Request $request)
     {
         $area = Area::create([
             'name' => $request->name,

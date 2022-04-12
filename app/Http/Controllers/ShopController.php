@@ -42,12 +42,12 @@ class ShopController extends Controller
             'areas' => $areas,
             'genres' => $genres,
         ];
-        return view('shop_register', $data);
+        return view('owner.shop_register', $data);
     }
 
     public function register(ShopRegisterRequest $request)
     {
-        $shop=Shop::create([
+        $shop = Shop::create([
             'name' => $request->name,
             'area_id' => $request->area_id,
             'genre_id' => $request->genre_id,
@@ -58,7 +58,7 @@ class ShopController extends Controller
             'image_url' => $request->image_url,
         ]);
         unset($shop['_token']);
-        return redirect('/owner/mypage/{owner}');
+        return back();
     }
     public function updateView(Shop $shop)
     {
@@ -69,7 +69,7 @@ class ShopController extends Controller
             'areas' => $areas,
             'genres' => $genres,
         ];
-        return view('shop_update', $data);
+        return view('owner.shop_update', $data);
     }
 
     public function update(ShopRegisterRequest $request)
@@ -77,6 +77,6 @@ class ShopController extends Controller
         $form = $request->all();
         unset($form['_token']);
         Shop::where('id', $request->id)->update($form);
-        return redirect('/owner/mypage');
+        return back();
     }
 }

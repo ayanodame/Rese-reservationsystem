@@ -19,7 +19,7 @@ class ReservationController extends Controller
             'people' => $request->people,
         ]);
         unset($reservation['_token']);
-        return view('reserved');
+        return view('user.reserved');
     }
     public function delete(Request $request)
     {
@@ -33,7 +33,7 @@ class ReservationController extends Controller
         $reservationData = [
             'items' => $reservation,
         ];
-        return view('update', $reservationData);
+        return view('user.reservation_update', $reservationData);
     }
     public function update(ReserveRequest $request)
     {

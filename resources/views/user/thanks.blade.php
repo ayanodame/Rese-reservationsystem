@@ -3,9 +3,9 @@
 
 @section('css')
 @if(app('env')=='local')
-<link rel="stylesheet" href="{{ asset('css/prethanks.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user/thanks.css') }}">
 @endif
-<link rel="stylesheet" href="{{ secure_asset('css/prethanks.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/user/thanks.css') }}">
 @endsection
 
 
@@ -13,7 +13,7 @@
 <main class="thanks">
   <div class="box">
     <p class="box__message">会員登録完了しました。</p>
-    <a class="box__button" href="/mypage">マイページへ</a>
+    <a class="box__button" href="/user/mypage">マイページへ</a>
   </div>
 </main>
 
