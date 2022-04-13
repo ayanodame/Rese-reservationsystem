@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\GenreRequest;
 use App\Models\Genre;
 
 class GenreController extends Controller
@@ -12,7 +13,7 @@ class GenreController extends Controller
         return view('genre_register');
     }
 
-    public function register(Request $request)
+    public function register(GenreRequest $request)
     {
         $genre = Genre::create([
             'name' => $request->name,
