@@ -16,7 +16,7 @@ class UserController extends Controller
 {
     public function registerView(Request $request)
     {
-        return view('user.register');
+        return view('user.user_register');
     }
 
     public function register(UserRequest $request)

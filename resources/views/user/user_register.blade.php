@@ -4,9 +4,9 @@
 
 @section('css')
 @if(app('env')=='local')
-<link rel="stylesheet" href="{{ asset('css/user/register.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user/user_register.css') }}">
 @endif
-<link rel="stylesheet" href="{{ secure_asset('css/user/register.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/user/user_register.css') }}">
 @endsection
 
 
