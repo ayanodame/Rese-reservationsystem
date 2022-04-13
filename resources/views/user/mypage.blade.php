@@ -114,7 +114,7 @@
               @csrf
               <input type="hidden" name="shop_id" value="{{$like->shop->id}}">
               <button class="like__button">
-                <img src="/icon/ハートのマーク赤色.svg"" alt=" いいね" class="like__image">
+                <img src="/icon/ハートのマーク赤色.svg" alt="いいね" class="like__image">
               </button>
             </form>
           </div>
