@@ -1,6 +1,7 @@
 .evaluation {
     padding-left: 50px;
     display: flex;
+    width: 100%;
 }
 
 .information {
@@ -54,6 +55,7 @@
 .information__content__summary {
     font-size: 14px;
     line-height: 25px;
+    padding-right: 20px;
 }
 
 .value {
@@ -97,6 +99,7 @@
 .list__comment__content {
     display: flex;
     flex-direction: column;
+    width: 90%;
 }
 
 .value__button {
@@ -119,4 +122,48 @@
     color: red;
     font-size: 10px;
     padding-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .evaluation {
+        flex-direction: column;
+    }
+    .information,
+    .value {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .system-header {
+        height: 100px;
+        padding-bottom: 20px;
+    }
+    .evaluation {
+        width: 90%;
+    }
+    .information {
+        margin-right: 0;
+    }
+
+    .list__rate__title,
+    .list__comment__title {
+        font-size: 10px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        width: 50%;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .list__rate__content,
+    .list__comment__content {
+        padding-bottom: 20px;
+        width: 80%;
+        margin: 0;
+        display: inline-block;
+    }
+    .list__comment__content-form {
+        width: 100%;
+    }
 }
