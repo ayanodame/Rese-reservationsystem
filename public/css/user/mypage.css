@@ -61,24 +61,19 @@
     margin-left: 20px;
 }
 
-.check__update {
+.check__button {
     position: absolute;
-    bottom: 5%;
-    right: 5%;
-    color: blue;
-    background-color: white;
-    padding: 10px 30px;
-    text-decoration: none;
-    border-radius: 5px;
+    bottom: 0%;
+    right: 0%;
+    display: flex;
 }
 
-.check__evaluate {
-    position: absolute;
-    bottom: 5%;
-    right: 25%;
+.check__button__update,
+.check__button__evaluate {
     color: blue;
     background-color: white;
     padding: 10px 30px;
+    margin-right: 20px;
     text-decoration: none;
     border-radius: 5px;
 }
@@ -254,25 +249,9 @@
         width: 25px;
         height: 25px;
     }
-    .check__update {
-        position: absolute;
-        bottom: 5%;
-        right: 5%;
-        color: blue;
-        background-color: white;
+    .check__button__update,
+    .check__button__evaluate {
         padding: 10px 10px;
-        text-decoration: none;
-        border-radius: 5px;
-    }
-    .check__evaluate {
-        position: absolute;
-        bottom: 5%;
-        right: 25%;
-        color: blue;
-        background-color: white;
-        padding: 10px 10px;
-        text-decoration: none;
-        border-radius: 5px;
     }
 }
 
@@ -338,26 +317,18 @@
         margin-right: 10px;
         width: 100%;
     }
-    .check__update {
-        position: absolute;
-        bottom: 5%;
-        right: 3%;
-        color: blue;
-        background-color: white;
-        padding: 3px 3px;
-        text-decoration: none;
-        border-radius: 5px;
+    .check__button {
+        padding-bottom: 10px;
+        flex-direction: column;
+    }
+    .check__button__update,
+    .check__button__evaluate {
+        padding: 5px 5px;
+        margin-bottom: 5px;
+        margin-right: 5px;
         font-size: 8px;
     }
-    .check__evaluate {
-        position: absolute;
-        bottom: 5%;
-        right: 23%;
-        color: blue;
-        background-color: white;
-        padding: 3px 3px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 8px;
+    .check__button__evaluate {
+        margin-bottom: 0;
     }
 }
