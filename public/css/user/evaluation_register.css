@@ -1,0 +1,122 @@
+.evaluation {
+    padding-left: 50px;
+    display: flex;
+}
+
+.information {
+    width: 45%;
+    margin-right: 30px;
+    background-color: white;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 2px 3px gray;
+}
+
+.information__title {
+    background-color: blue;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+.information__title__name {
+    color: white;
+}
+
+.information__content {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.information__content__image {
+    width: 80%;
+}
+
+.information__content__title {
+    font-size: 18px;
+    font-weight: 600;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.hashtag {
+    display: flex;
+}
+
+.information__content__area,
+.information__content__genre {
+    font-size: 12px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+}
+
+.information__content__summary {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.value {
+    width: 45%;
+    height: 100%;
+    background-color: white;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 2px 3px gray;
+}
+
+.value__title {
+    background-color: blue;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+.value__title__name {
+    color: white;
+}
+
+.value__content {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.list__rate__title,
+.list__comment__title {
+    text-align: left;
+    padding-right: 15px;
+    padding-bottom: 30px;
+}
+
+.list__comment__title {
+    vertical-align: top;
+}
+
+.list__rate__content,
+.list__comment__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.value__button {
+    padding-top: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: right;
+}
+
+.value__button__register {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error-message {
+    color: red;
+    font-size: 10px;
+    padding-bottom: 5px;
+}
