@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function registerView(Request $request)
+    public function registerView()
     {
         return view('user.user_register');
     }
@@ -45,7 +45,7 @@ class UserController extends Controller
         return view('user.mypage', $data);
     }
 
-    public function loginView(Request $request)
+    public function loginView()
     {
         $errorMessage = ['errorMessage' => ''];
         return view('user.login', $errorMessage);
