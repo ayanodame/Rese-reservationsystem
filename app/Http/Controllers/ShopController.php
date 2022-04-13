@@ -20,7 +20,7 @@ class ShopController extends Controller
                 $shops = Shop::searchShop($areaId, $genreId, $keywords);
                 $areas = Area::all();
                 $genres = Genre::all();
-                return view('index', ['shops' => $shops, 'areas' => $areas, 'genres' => $genres, 'keywords' => $keywords, 'areaId' => $areaId, 'genreId' => $genreId]);
+                return view('user.index', ['shops' => $shops, 'areas' => $areas, 'genres' => $genres, 'keywords' => $keywords, 'areaId' => $areaId, 'genreId' => $genreId]);
         }
 
         public function detaillView(Shop $shop)

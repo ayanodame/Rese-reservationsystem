@@ -3,9 +3,9 @@
 
 @section('css')
 @if(app('env')=='local')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user/index.css') }}">
 @endif
-<link rel="stylesheet" href="{{ secure_asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/user/index.css') }}">
 @endsection
 
 @section('side')
