@@ -40,9 +40,10 @@ Route::get('/detail/{shop}', [ShopController::class, 'detaillView']);
 Route::post('/reserve', [ReservationController::class, 'register']);
 Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 Route::get('delete', [ReservationController::class, 'delete']);
-Route::get('/update/{reservation}', [ReservationController::class, 'updateView'])->middleware('guest');
+Route::get('/update/{reservation}', [ReservationController::class, 'updateView'])->middleware('verified');
 Route::post('/update', [ReservationController::class, 'update']);
-Route::get('/evaluation/register/{reservation}', [EvaluationController::class, 'registerView']);
+Route::get('/evaluation/register/{reservation}', [EvaluationController::class, 'registerView'])->middleware('verified');
+Route::post('/evaluation/register', [EvaluationController::class, 'register']);
 
 //管理側のルート
 Route::get('/admin', [AdminController::class, 'adminView']);
