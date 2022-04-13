@@ -6,9 +6,9 @@
 
 @section('css')
 @if(app('env')=='local')
-<link rel="stylesheet" href="{{ asset('css/shopdetail.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user/shopdetail.css') }}">
 @endif
-<link rel="stylesheet" href="{{ secure_asset('css/shopdetail.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/user/shopdetail.css') }}">
 @endsection
 
 @section('side')
@@ -110,7 +110,7 @@
     <input type="submit" value="予約する" class="reservation__button">
     @else
     <p class="reservation__login-message">予約登録にはログインが必要です</p>
-    <a href="/login" class="reservation__login-button">ログインする</a>
+    <a href="/user/login" class="reservation__login-button">ログインする</a>
     @endif
 
   </form>
