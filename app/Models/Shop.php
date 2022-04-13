@@ -41,6 +41,10 @@ class Shop extends Model
     {
         return $this->belongsTo(('App\Models\Owner'));
     }
+    public function evaluations()
+    {
+        return $this->hasMany('App\Models\Evaluation');
+    }
 
     public static function searchShop($areaId, $genreId, $keywords)
     {
