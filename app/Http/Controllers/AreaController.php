@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\AreaRequest;
 use App\Models\Area;
 
 
@@ -12,7 +13,7 @@ class AreaController extends Controller
     {
         return view('area_register');
     }
-    public function register(Request $request)
+    public function register(AreaRequest $request)
     {
         $area = Area::create([
             'name' => $request->name,
