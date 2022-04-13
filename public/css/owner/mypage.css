@@ -1,5 +1,9 @@
-.owner {
+.pages {
+    width: 80%;
     padding-left: 80px;
+}
+
+.owner {
     padding-bottom: 50px;
 }
 
@@ -16,7 +20,7 @@
     position: relative;
     background-color: white;
     padding: 20px;
-    width: 90%;
+    width: 100%;
 }
 
 .shop__image {
@@ -52,9 +56,13 @@
     position: absolute;
     right: 20px;
     bottom: 20px;
+}
+
+.shop__button__update {
     background-color: blue;
     padding: 10px 20px;
     border-radius: 5px;
+    width: 100px;
     cursor: pointer;
 }
 
@@ -76,22 +84,27 @@
     text-decoration: none;
 }
 
-.reservation {
-    padding-left: 80px;
-    padding-right: 80px;
+.reservation,
+.evaluation {
+    width: 100%;
+    padding-bottom: 20px;
 }
 
-.reservation__title__name {
+.reservation__title__name,
+.evaluation__title__name {
     font-size: 25px;
     padding-bottom: 10px;
 }
 
-.reservation__contents {
+.reservation__contents,
+.evaluation__contents {
     background-color: white;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 10px;
+    padding-right: 20px;
     border-top: solid 8px blue;
+    width: 100%;
 }
 
 .lists {
@@ -116,12 +129,21 @@
 .lists__title__email,
 .lists__title__date,
 .lists__title__time,
-.lists__title__people {
+.lists__title__people,
+.lists__title__rate {
     padding-top: 10px;
     padding-bottom: 10px;
     border: solid 1px gray;
     font-weight: 530;
     width: 200px;
+}
+
+.lists__title__comment {
+    width: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid 1px gray;
+    font-weight: 530;
 }
 
 .lists__detail__name,
@@ -136,6 +158,30 @@
     border-top: none;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.lists__detail__rate {
+    font-size: 13px;
+    text-align: left;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border: solid 1px gray;
+    border-top: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.lists__detail__comment {
+    text-align: left;
+    font-size: 10px;
+    overflow: scroll;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    border: solid 1px gray;
+    border-top: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: top;
 }
 
 .pagination {
