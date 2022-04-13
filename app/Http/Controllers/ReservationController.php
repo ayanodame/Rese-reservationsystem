@@ -40,6 +40,6 @@ class ReservationController extends Controller
         $form = $request->all();
         unset($form['_token']);
         Reservation::where('id', $request->id)->update($form);
-        return redirect('/mypage');
+        return redirect('/user/mypage');
     }
 }
