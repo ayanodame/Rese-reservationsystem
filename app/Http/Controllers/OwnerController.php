@@ -29,8 +29,8 @@ class OwnerController extends Controller
 
     public function mypageView(Owner $owner)
     {
-        $reservations = Reservation::where('shop_id', $owner->shop->id)->get();
-        $evaluations = Evaluation::where('shop_id', $owner->shop->id)->get();
+        $reservations = Reservation::where('shop_id', optional($owner->shop)->id)->get();
+        $evaluations = Evaluation::where('shop_id', optional($owner->shop)->id)->get();
         $data = [
             'item' => $owner,
             'reservations' => $reservations,
