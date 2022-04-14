@@ -191,7 +191,7 @@
 .reservation__login-message {
     color: white;
     position: absolute;
-    bottom: 70px;
+    bottom: 15%;
     right: 0;
     width: 100%;
     font-size: 12px;
@@ -243,6 +243,7 @@
         padding-left: 20px;
         padding-top: 20px;
     }
+
     .shopdetail {
         width: 100%;
     }
