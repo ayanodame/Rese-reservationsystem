@@ -12,7 +12,6 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\SessionController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 /*
