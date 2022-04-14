@@ -1,4 +1,4 @@
-# Rese-reservationsystem2
+# Rese-reservationsystem
 
 とある企業のグループ会社の飲食店予約サービスです。
 
@@ -129,7 +129,7 @@ php artisan serve
 3. マイページにて、お気に入り店舗・予約状況を確認することができる。
  
  
-### 【管理者】
+### 【管理者】admin
 
 **店舗担当者一覧**
  
@@ -144,7 +144,7 @@ php artisan serve
  
  
  
-### 【店舗担当者】
+### 【店舗担当者】owner
 
 **店舗担当者画面**
 
