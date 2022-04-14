@@ -97,6 +97,7 @@
         @endforeach
       </table>
     </div>
+    {{ $areas->links() }}
   </section>
   <div class="button">
     <a href="/area/register" class="button__register">エリア登録</a>
@@ -118,6 +119,7 @@
         @endforeach
       </table>
     </div>
+    {{ $genres->links() }}
   </section>
   <div class="button">
     <a href="/genre/register" class="button__register">ジャンル登録</a>

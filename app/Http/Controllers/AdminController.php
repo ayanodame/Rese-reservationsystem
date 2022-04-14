@@ -18,8 +18,8 @@ class AdminController extends Controller
         $email = $request->input_email;
         $items = Owner::searchOwner($shopId, $email, $keywords);
         $shops = shop::all();
-        $areas = Area::all();
-        $genres = Genre::all();
+        $areas = Area::Paginate(4, ['*'], 'areapages');
+        $genres = Genre::Paginate(4, ['*'], 'genrepages');
         return view('admin', ['keywords' => $keywords, 'shopId' => $shopId, 'email' => $email, 'keywords' => $keywords, 'items' => $items, 'shops' => $shops, 'areas' => $areas, 'genres' => $genres]);
     }
 }
