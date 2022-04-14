@@ -106,7 +106,7 @@ php artisan serve
 
 # Usage
 
-### 【ユーザー】
+### 【ユーザー】User
 
 **店舗一覧**
 
