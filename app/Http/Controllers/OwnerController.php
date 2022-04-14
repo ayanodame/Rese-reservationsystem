@@ -13,7 +13,7 @@ class OwnerController extends Controller
 {
     public function registerView()
     {
-        return view('owner.register');
+        return view('owner_register');
     }
 
     public function register(OwnerRequest $request)
