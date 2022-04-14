@@ -1,64 +1,64 @@
-.pages {
-    width: 80%;
-    padding-left: 80px;
-}
-
 .owner {
-    padding-bottom: 50px;
-}
-
-.owner__name {
-    padding-bottom: 20px;
-}
-
-.owner__name__message {
-    font-size: 20px;
+    padding-left: 80px;
+    width: 90%;
 }
 
 .shop {
+    padding-bottom: 50px;
+}
+
+.shop-owner__name {
+    padding-bottom: 20px;
+}
+
+.shop-owner__name__message {
+    font-size: 20px;
+}
+
+.information {
     display: flex;
     position: relative;
     background-color: white;
     padding: 20px;
-    width: 100%;
+    width: 90%;
 }
 
-.shop__image {
+.information__image {
     width: 50%;
     padding-right: 20px;
 }
 
-.shop__content__title {
+.information__content__title {
     padding-bottom: 20px;
     padding-top: 10px;
 }
 
-.shop__content__title-name {
+.information__content__title-name {
     font-size: 25px;
     font-weight: bold;
 }
 
-.shop__content__tag {
+.information__content__tag {
     display: flex;
     padding-bottom: 20px;
 }
 
-.shop__content__tag-area,
-.shop__content__tag-genre {
+.information__content__tag-area,
+.information__content__tag-genre {
     padding-right: 20px;
 }
 
-.shop__content__summary-detail {
+.information__content__summary-detail {
     line-height: 25px;
 }
 
-.shop__button {
+.information__button {
     position: absolute;
     right: 20px;
     bottom: 20px;
 }
 
-.shop__button__update {
+.information__button__update {
     background-color: blue;
     padding: 10px 20px;
     border-radius: 5px;
@@ -74,7 +74,7 @@
     cursor: pointer;
 }
 
-.shop__button__update {
+.information__button__update {
     color: white;
     text-decoration: none;
 }
@@ -86,7 +86,7 @@
 
 .reservation,
 .evaluation {
-    width: 100%;
+    width: 90%;
     padding-bottom: 20px;
 }
 
@@ -158,10 +158,11 @@
     border-top: none;
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 13px;
 }
 
 .lists__detail__rate {
-    font-size: 13px;
+    font-size: 10px;
     text-align: left;
     padding-top: 13px;
     padding-bottom: 13px;

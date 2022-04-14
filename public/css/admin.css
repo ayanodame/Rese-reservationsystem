@@ -1,6 +1,10 @@
-.search {
+.admin {
     padding-left: 80px;
     padding-right: 80px;
+}
+
+.search {
+    width: 100%;
     padding-bottom: 70px;
 }
 
@@ -15,6 +19,7 @@
     padding-bottom: 30px;
     padding-left: 10px;
     border-top: solid 8px blue;
+    width: 100%;
 }
 
 .search__list {
@@ -28,6 +33,15 @@
 .search__email {
     display: flex;
     padding-right: 30px;
+}
+
+.search__shop {
+    width: 20%;
+}
+
+.search__owner,
+.search__email {
+    width: 40%;
 }
 
 .search__shop__title,
@@ -44,13 +58,13 @@
 }
 
 .form__shop {
-    width: 150px;
+    width: 100%;
     cursor: pointer;
 }
 
 .form__owner,
 .form__email {
-    width: 250px;
+    width: 100%;
 }
 
 .search__submit {
@@ -67,8 +81,7 @@
 }
 
 .list {
-    padding-left: 80px;
-    padding-right: 80px;
+    width: 100%;
 }
 
 .list__title__name {
@@ -78,18 +91,21 @@
 
 .list__contents {
     background-color: white;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 10px;
+    padding: 30px 20px;
     border-top: solid 8px blue;
-}
-
-.owners,
-.areas,
-.genres {
-    display: block;
     display: flex;
     justify-content: center;
+}
+
+.owners {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.areas,
+.genres {
+    table-layout: fixed;
+    width: 50%;
 }
 
 .message {
@@ -112,17 +128,9 @@
 .owners__title__email,
 .areas__title__name,
 .genres__title__name {
-    width: 200px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 20px;
     border: solid 1px gray;
     font-weight: 530;
-}
-
-.owners__list,
-.areas__list,
-.genres__list {
-    display: block;
 }
 
 .owners__list__name,
@@ -130,10 +138,8 @@
 .owners__list__email,
 .areas__list__name,
 .genres__list__name {
-    width: 200px;
     text-align: center;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    padding: 13px 20px;
     border: solid 1px gray;
     border-top: none;
     font-size: 13px;
@@ -150,9 +156,9 @@
 }
 
 .button {
-    margin: 50px 500px;
     display: flex;
     justify-content: center;
+    padding: 20px;
 }
 
 .button__register {
