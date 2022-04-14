@@ -1,4 +1,3 @@
-<!--飲食店詳細 -->
 @extends('layouts.default')
 @section('title')
 {{$items->name}}

@@ -1,4 +1,3 @@
-<!-- 予約完了ページ用　-->
 @extends('layouts.default')
 @section('title','Rese 予約完了')
 
