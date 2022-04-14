@@ -23,7 +23,6 @@
           <img src="/icon/シンプルな丸時計のアイコン色変え.svg" alt="時計" class="reservation__image">
           <p class="reservation__word">予約<?php print $number++; ?></p>
         </div>
-
         <form action="/delete" action="get">
           @csrf
           <input type="hidden" name="id" value="{{$reservation->id}}">
@@ -76,9 +75,7 @@
           <a href="/update/{{$reservation->id}}" class="check__button__update">変更</a>
           <a href="/evaluation/register/{{$reservation->id}}" class="check__button__evaluate">評価</a>
         </div>
-
       </div>
-
     </div>
     @endforeach
     @else
