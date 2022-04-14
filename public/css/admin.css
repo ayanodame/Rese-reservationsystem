@@ -112,7 +112,7 @@
 .owners__title__email,
 .areas__title__name,
 .genres__title__name {
-    width: 380px;
+    width: 200px;
     padding-top: 10px;
     padding-bottom: 10px;
     border: solid 1px gray;
@@ -130,12 +130,13 @@
 .owners__list__email,
 .areas__list__name,
 .genres__list__name {
-    width: 380px;
+    width: 200px;
     text-align: center;
     padding-top: 13px;
     padding-bottom: 13px;
     border: solid 1px gray;
     border-top: none;
+    font-size: 13px;
 }
 
 .pagination {
