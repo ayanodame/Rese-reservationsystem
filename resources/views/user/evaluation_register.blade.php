@@ -11,7 +11,7 @@
 
 @section('main')
 <main class="evaluation">
-  <div class="information">
+  <section class="information">
     <div class="information__title">
       <p class="information__title__name">予約したお店</p>
     </div>
@@ -25,8 +25,8 @@
 
       <p class="information__content__summary">{{$item->shop->summary}}</p>
     </div>
-  </div>
-  <div class="value">
+  </section>
+  <section class="value">
     <div class="value__title">
       <p class="value__title__name">評価・ご意見</p>
     </div>
@@ -66,7 +66,7 @@
         <input type="submit" value="送信" class="value__button__register">
       </div>
     </form>
-  </div>
+  </section>
 </main>
 
 
