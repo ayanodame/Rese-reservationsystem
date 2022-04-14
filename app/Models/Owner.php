@@ -51,7 +51,7 @@ class Owner extends Authenticatable
         if (isset($keywords)) {
             $query = $query->where('name', 'LIKE', "%{$keywords}%");
         }
-        $items = $query->Paginate(5);
+        $items = $query->Paginate(5,['*'],'itempages');
         return $items;
     }
 }
