@@ -10,27 +10,27 @@
 @endsection
 
 @section('main')
-<main class="pages">
-  <section class="owner">
-    <div class="owner__name">
-      <h2 class="owner__name__message">お疲れ様です。{{$item->name}}さん</h2>
+<main class="owner">
+  <section class="shop">
+    <div class="shop-owner__name">
+      <h2 class="shop-owner__name__message">お疲れ様です。{{$item->name}}さん</h2>
     </div>
     @isset($item->shop)
-    <div class="shop">
-      <img src="{{$item->shop->image_url}}" alt="{{$item->shop->name}}" class="shop__image">
-      <div class="shop__content">
-        <div class="shop__content__title">
-          <p class="shop__content__title-name">{{$item->shop->name}}</p>
+    <div class="information">
+      <img src="{{$item->shop->image_url}}" alt="{{$item->shop->name}}" class="information__image">
+      <div class="information__content">
+        <div class="information__content__title">
+          <p class="information__content__title-name">{{$item->shop->name}}</p>
         </div>
-        <div class="shop__content__tag">
-          <p class="shop__content__tag-area">#{{$item->shop->area->name}}</p>
-          <p class="shop__content__tag-genre">#{{$item->shop->genre->name}}</p>
+        <div class="information__content__tag">
+          <p class="information__content__tag-area">#{{$item->shop->area->name}}</p>
+          <p class="information__content__tag-genre">#{{$item->shop->genre->name}}</p>
         </div>
-        <div class="shop__content__summary">
-          <p class="shop__content__summary-detail">{{$item->shop->summary}}</p>
+        <div class="information__content__summary">
+          <p class="information__content__summary-detail">{{$item->shop->summary}}</p>
         </div>
-        <div class="shop__button">
-          <a href="/shop/update/{{$item->shop->id}}" class="shop__button__update">店舗情報更新</a>
+        <div class="information__button">
+          <a href="/shop/update/{{$item->shop->id}}" class="information__button__update">店舗情報更新</a>
         </div>
       </div>
     </div>
@@ -64,9 +64,10 @@
         <tr class="lists__detail">
           <td class="lists__detail__name">{{$reservation->user->name}}</td>
           <td class="lists__detail__email">{{$reservation->user->email}}</td>
-          <td class="lists__detail__date">{{$reservation->use_date}}</td>
+          <td class="lists__detail__date"><?php $date = ($reservation->use_date);
+                                          print date('Y年m月d日', strtotime($date)); ?></td>
           <td class="lists__detail__time">{{$reservation->use_time}}</td>
-          <td class="lists__detail__people">{{$reservation->people}}</td>
+          <td class="lists__detail__people">{{$reservation->people}}人</td>
         </tr>
         @endforeach
       </table>
