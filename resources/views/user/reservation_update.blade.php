@@ -11,7 +11,7 @@
 
 @section('main')
 <main class="update">
-  <div class="before">
+  <section class="before">
     <div class="before__title">
       <p class="before__title__name">変更前情報</p>
     </div>
@@ -35,11 +35,11 @@
         </tr>
       </table>
     </div>
-  </div>
+  </section>
   <div class="icon">
     <img class="icon__image" src="/icon/矢印アイコン　右2.svg" alt="→">
   </div>
-  <div class="after">
+  <section class="after">
 
     <!--時間のプルダウンリストを作成するための繰り返し文 -->
     <?php
@@ -97,16 +97,18 @@
           </tr>
           <tr class="after__information__number">
             <th class="after__information__number-title">Number</th>
-            <td class="after__information__number-name"><select name="people" class="reservation__number">
+            <td class="after__information__number-name">
+              <select name="people" class="reservation__number">
                 @for($people=1; $people<=10; $people++) <option value="{{$people}}">{{$people}}人</option>
                   @endfor
-              </select></td>
+              </select>
+            </td>
           </tr>
         </table>
         <div class="after__button">
           <input type="submit" value="変更" class="update__button">
         </div>
     </div>
-  </div>
+  </section>
 </main>
 @endsection
