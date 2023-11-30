@@ -3,9 +3,8 @@
 とある企業のグループ会社の飲食店予約サービスです。
 
 
-# DEMO
+# IMAGE
 
-<http://still-hollows-32002.herokuapp.com>
  <img width="1437" alt="shop_all" src="https://user-images.githubusercontent.com/89112485/158315174-c5ec560f-1089-4947-a8c8-1e48d817e76c.png">
 
 # Features
